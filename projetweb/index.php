@@ -27,6 +27,7 @@ if (isset($_GET['action']) && $_GET['action'] !== '') {
             $identifier = $_GET['id'];
 
             detailentreprise($identifier);
+            addComment($identifier, $_POST);
         } else {
             echo 'Erreur : aucun identifiant de billet envoyé';
 
