@@ -20,7 +20,7 @@
                 	<?= $entreprise->nom ?> / Confiance : 
                     <?= $entreprise->confiance; ?>
                     <br>
-                	<?= $entreprise->description; ?>
+                	<?= $entreprise->description_entreprise; ?>
                     <br>
                 	<em><a href="index.php?action=detailentreprise&id=<?= urlencode($entreprise->id_entreprise) ?>">Détails</a></em>
             	</p>

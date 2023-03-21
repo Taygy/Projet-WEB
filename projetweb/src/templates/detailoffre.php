@@ -13,15 +13,22 @@
         <div class="news">
             	<p>
 					<img src="<?= $offre[0]->lien_logo ?>">
+                    <?=$offre[0]->nom ?> :
+                    <?=$offre[0]->description_entreprise ?>
                     <br>
                     <?=$offre[0]->titre ?> / Durée :
                 	<em> <?= $offre[0]->duree; ?></em>
+                    <br>Adresse :
+                    <?=$offre[0]->adresse_complete ?>
+                    <br>Ville :
+                    <?=$offre[0]->ville ?> Code postal :
+                    <?=$offre[0]->code_postal ?>
                     <br>Description :
-                    <?=$offre[0]->description ?>
+                    <?=$offre[0]->description_offre ?>
                     <br>Compétences requises :
-                    <?=$offre[0]->competence ?>
+                    <?=$offre[0]->competences ?>
                     <br>Rémunération attendue :
-                    <?=$offre[0]->remuneration ?>
+                    <?=$offre[0]->remuneration ?> €/h
                     <br>Nombre de places pour cette offre :
                     <?=$offre[0]->nombre_places ?>
             	</p>

@@ -19,7 +19,7 @@
                 	<?= $offre->titre; ?> / Durée :
                 	<em> <?= $offre->duree; ?></em>
                     <br>
-                    <?=$offre->description;?>
+                    <?=$offre->description_offre;?>
                     <br>
                 	<em><a href="index.php?action=detailoffre&id=<?= urlencode($offre->id_offre) ?>">Détails</a></em>
             	</p>
