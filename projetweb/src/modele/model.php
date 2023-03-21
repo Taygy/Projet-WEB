@@ -10,7 +10,7 @@ function getOffres() {
 
 function getOffre($identifier) {
 	$database = dbConnect();
-	$statement = $database->prepare("SELECT * FROM offre JOIN entreprise ON offre.id_entreprise=entreprise.id_entreprise WHERE id_offre = ?");
+	$statement = $database->prepare("SELECT * FROM offre JOIN entreprise ON offre.id_entreprise=entreprise.id_entreprise JOIN localise_entreprise ON localise_entreprise.id_entreprise=entreprise.id_entreprise JOIN adresse ON localise_entreprise.id_adresse=adresse.id_adresse WHERE id_offre = ?");
 	$statement->execute([$identifier]);
 	$offre = $statement->fetchAll(PDO::FETCH_OBJ);
 	return $offre;
@@ -18,14 +18,14 @@ function getOffre($identifier) {
 
 function getEntreprises() {
 	$database = dbConnect();
-	$statement = $database->query("SELECT * FROM `entreprise`");
+	$statement = $database->query("SELECT * FROM `entreprise` WHERE visible=1");
 	$entreprises = $statement->fetchAll(PDO::FETCH_OBJ);
 	return $entreprises;
 }
 
 function getEntreprise($identifier) {
 	$database = dbConnect();
-	$statement = $database->prepare("SELECT * FROM `entreprise` WHERE id_entreprise = ?");
+	$statement = $database->prepare("SELECT * FROM `entreprise` WHERE id_entreprise = ? AND visible=1");
 	$statement->execute([$identifier]);
 	$entreprise = $statement->fetchAll(PDO::FETCH_OBJ);
 	return $entreprise;
@@ -40,6 +40,18 @@ function getCommentaires($identifier) {
 	$commentaire = $statement->fetchAll(PDO::FETCH_OBJ);
 	return $commentaire;
 }
+
+function createComment(string $commentaire, string $note, string $id_membre, string $id_entreprise)
+{
+	$database = dbConnect();
+	$statement = $database->prepare(
+    	'INSERT INTO avis(commentaire, note, id_membre, id_entreprise) VALUES(?, ?, ?, ?)'
+	);
+	$affectedLines = $statement->execute([$commentaire, $note, $id_membre, $id_entreprise]);
+
+	return ($affectedLines > 0);
+}
+
 
 // Nouvelle fonction qui nous permet d'éviter de répéter du code
 function dbConnect()
