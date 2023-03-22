@@ -230,6 +230,62 @@
     height: 30px;
 }
 
+.nom-de-lentreprise {
+    position: absolute;
+    top: 80.5px;
+    left: 29px;
+    display: flex;
+    align-items: center;
+    width: 333px;
+    height: 61px;
+}
+
+.confiance {
+    position: absolute;
+    top: 430px;
+    left: 434px;
+    display: flex;
+    align-items: center;
+    width: 333px;
+    height: 61px;
+}
+
+.secteur {
+    position: absolute;
+    top: 600px;
+    left: calc(50% - 480.5px);
+    display: flex;
+    align-items: center;
+    width: 333px;
+    height: 61px;
+}
+
+.objet-1 {
+    position: absolute;
+    top: 660px;
+    left: 29px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-silver);
+    border: 3px solid var(--color-springgreen);
+    box-sizing: border-box;
+    width: 333px;
+    height: 88px;
+    color: var(--color-white);
+}
+
+.conf {
+    position: absolute;
+    top: 490px;
+    left: 515px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-silver);
+    border: 3px solid var(--color-springgreen);
+    box-sizing: border-box;
+    width: 333px;
+    height: 88px;
+    color: var(--color-white);
+}
+
 .pub {
     position: absolute;
     top: 1644px;
@@ -283,6 +339,32 @@
     border: 3px solid var(--color-springgreen);
     box-sizing: border-box;
     width: 819px;
+    height: 88px;
+    color: var(--color-white);
+}
+
+.tel {
+    position: absolute;
+    top: 490px;
+    left: 29px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-silver);
+    border: 3px solid var(--color-springgreen);
+    box-sizing: border-box;
+    width: 333px;
+    height: 88px;
+    color: var(--color-white);
+}
+
+.vill {
+    position: absolute;
+    top: 1041px;
+    left: 29px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-silver);
+    border: 3px solid var(--color-springgreen);
+    box-sizing: border-box;
+    width: 333px;
     height: 88px;
     color: var(--color-white);
 }
@@ -351,6 +433,7 @@
     height: 323px;
     color: var(--color-white);
 }
+
 
 .btn-pub {
     padding: 5px 15px;
