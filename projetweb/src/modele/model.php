@@ -73,13 +73,13 @@ function createOffre(string $titre, string $duree, string $remuneration, string 
 	return ($affectedLines > 0);
 }
 
-function addCompetance(string $competance)
+function addCompetence(string $competence)
 {
 	$database = dbConnect();
 	$statement = $database->prepare(
-		'INSERT INTO offre(competance) VALUES(?)'
+		'INSERT INTO competence(competence) VALUES(?)'
 	);
-	$affectedLines = $statement->execute([$competance]);
+	$affectedLines = $statement->execute([$competence]);
 	return ($affectedLines > 0);
 }
 
