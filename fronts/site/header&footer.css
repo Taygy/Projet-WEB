@@ -1,0 +1,149 @@
+/*header*/
+
+.header,
+.hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-darkslategray);
+    width: 1500px;
+    height: 93px;
+}
+
+.hover {
+    top: 46px;
+    border-radius: var(--br-31xl);
+    background-color: var(--color-springgreen);
+    width: 92px;
+    height: 5px;
+}
+
+.acc {
+    height: 31px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 30px;
+}
+
+.navbar {
+    align-items: flex-end;
+    background-color: var(--tuatara);
+    display: flex;
+    gap: 908px;
+    height: 93px;
+    justify-content: flex-end;
+    left: 0;
+    min-width: 1500px;
+    padding: 18px 66px;
+    position: absolute;
+    top: 0;
+}
+
+.navbar ul {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px;
+}
+
+.navbar ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color .3s;
+}
+
+.navbar ul li a:hover {
+    color: #00E472;
+}
+
+.menu {
+    position: absolute;
+    top: 25px;
+    left: 0px;
+    width: 960px;
+    height: 51px;
+}
+
+.valign-text-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mon-compte {
+    padding: 5px 15px;
+    background-color: var(--color-springgreen);
+    border: 1px solid var(--color-springgreen);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+    height: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 135px;
+    position: absolute;
+    top: 30px;
+    right: 200px;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 135px;
+}
+
+.mon-compte:hover {
+    color: inherit;
+    background-color: var(--color-gray-300);
+}
+
+.image-1 {
+    height: 112;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 236px;
+}
+
+#my-image {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    height: 112px;
+    object-fit: cover;
+    width: 236px;
+}
+.chercher{
+    box-sizing: border-box;
+
+position: absolute;
+width: 393px;
+height: 88px;
+left: 63px;
+top: 211px;
+
+border: 3px solid #00E472;
+border-radius: 20px;
+}
+.scroll-button {
+    background-color: #d88b8b;
+    color: #000;
+    border: 1px solid #000;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .scroll-button i {
+    margin-left: 5px;
+  }
