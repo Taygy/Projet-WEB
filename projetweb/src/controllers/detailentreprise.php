@@ -25,5 +25,5 @@ function detailentreprise(string $identifier){
             header('Location: index.php?action=detailentreprise&id='.$identifier);
         }
     }
-    require('src/templates/detailentreprise.php');
+    require('src/view/detailentreprise.php');
 }

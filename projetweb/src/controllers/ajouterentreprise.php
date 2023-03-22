@@ -3,7 +3,7 @@
 require_once('src/modele/model.php');
 function addEntreprise(array $input)
 {
-    require('src/templates/ajouterentreprise.php');
+    require('src/view/ajouterentreprise.php');
     $nom = null;
     $description_entreprise = null;
     $secteur = null;
@@ -29,7 +29,6 @@ function addEntreprise(array $input)
         $code_postal = $input['code_postal'];
         $adresse_complete = $input['adresse_complete'];
     } else {
-        echo ('Les données du formulaire sont invalides.');
         return;
     }
 

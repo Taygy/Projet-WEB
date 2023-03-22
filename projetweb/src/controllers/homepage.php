@@ -5,5 +5,5 @@ require_once('src/modele/model.php');
 
 function homepage() {
 
-	require('src/templates/homepage.php');
+	require('src/view/homepage.php');
 }
