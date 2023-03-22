@@ -7,6 +7,12 @@ function getOffres() {
 	$offres = $statement->fetchAll(PDO::FETCH_OBJ);
 	return $offres;
 }
+function searchOffre(string $search) {
+	$database = dbConnect();
+	$statement = $database->query("SELECT * FROM offre JOIN entreprise ON offre.id_entreprise=entreprise.id_entreprise WHERE (`titre` LIKE '%"."$search"."%') OR (`description_offre` LIKE '%"."$search"."%') OR (`nom` LIKE '%"."$search"."%')");
+	$soffres = $statement->fetchAll(PDO::FETCH_OBJ);
+	return $soffres;
+}
 
 function getOffre($identifier) {
 	$database = dbConnect();
@@ -15,6 +21,7 @@ function getOffre($identifier) {
 	$offre = $statement->fetchAll(PDO::FETCH_OBJ);
 	return $offre;
 }
+
 
 function getEntreprises() {
 	$database = dbConnect();
@@ -29,6 +36,24 @@ function getEntreprise($identifier) {
 	$statement->execute([$identifier]);
 	$entreprise = $statement->fetchAll(PDO::FETCH_OBJ);
 	return $entreprise;
+}
+
+function createEntreprise(string $nom, string $description_entreprise, string $secteur, string $mail, string $confiance, string $nombre_employes, string $lien_logo, string $visible){
+	$database = dbConnect();
+	$statement = $database->prepare(
+		'INSERT INTO entreprise(nom, description_entreprise, secteur, mail, confiance, nombre_employes, lien_logo, visible) VALUES(?, ?, ?, ?, ?, ?, ?, ?)'
+	);
+	$affectedLines = $statement->execute([$nom, $description_entreprise, $secteur, $mail, $confiance, $nombre_employes, $lien_logo, $visible]);
+	return ($affectedLines > 0);
+}
+
+function addAdresse(string $ville, string $code_postal, string $adresse_complete){
+	$database = dbConnect();
+	$statement = $database->prepare(
+		'INSERT INTO adresse(ville, code_postal, adresse_complete) VALUES(?, ?, ?)'
+	);
+	$affectedLines = $statement->execute([$ville, $code_postal, $adresse_complete]);
+	return ($affectedLines > 0);
 }
 
 function getCommentaires($identifier) {

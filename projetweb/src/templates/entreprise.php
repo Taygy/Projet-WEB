@@ -28,5 +28,6 @@
     	<?php
     	} // The end of the posts loop.
     	?>
+		<p><a href="index.php?action=ajouterentreprise">Vous voullez ajouter une entreprise ?</a></p>
 	</body>
 </html>

@@ -15,17 +15,17 @@
 			<input type="submit" value="Rechercher">
 		</form>
     	<?php
-    	foreach ($offres as $offre) {
+    	foreach ($soffres as $soffre) {
     	?>
         	<div class="news">
             	<p>
-					<img src="<?= $offre->lien_logo ?>">
-                	<?= $offre->titre; ?> / Durée :
-                	<em> <?= $offre->duree; ?></em>
+					<img src="<?= $soffre->lien_logo ?>">
+                	<?= $soffre->titre; ?> / Durée :
+                	<em> <?= $soffre->duree; ?></em>
                     <br>
-                    <?=$offre->description_offre;?>
+                    <?=$soffre->description_offre;?>
                     <br>
-                	<em><a href="index.php?action=detailoffre&id=<?= urlencode($offre->id_offre) ?>">Détails</a></em>
+                	<em><a href="index.php?action=offre">Retour à toutes les offres</a></em>
             	</p>
         	</div>
     	<?php
