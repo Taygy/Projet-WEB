@@ -30,7 +30,7 @@
                     <img class="fb" src="public\logo\fb.png" />
                 </div>
             </div>
-            <img src="projetweb\public\logo\logoce.png" alt="Logo de CESI" class="my-image1">
+            <img src="public\logo\logoce.png" alt="Logo de CESI" class="my-image1">
             <p class="copyright">CESI © 2023</p>
         </footer>
     </div>

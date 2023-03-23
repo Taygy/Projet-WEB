@@ -29,7 +29,7 @@
 				<em><a href="index.php?action=detailoffre&id=<?= urlencode($offre->id_offre) ?>">Détails</a></em>
 			</p>
 		</div>
-		<p><a href="index.php?action=ajouteroffre">Vous voulez ajouter une offre ?</a></p>
+
 	<?php
 	} // The end of the posts loop.
 	?>

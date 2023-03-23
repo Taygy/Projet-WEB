@@ -4,18 +4,25 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <link rel="stylesheet" href="global.css" />
-    <link rel="stylesheet" href="creer-entreprise.css" />
-    <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="public/css/global.css" />
+    <link rel="stylesheet" href="public/css/creerentreprise.css" />
+    <link rel="stylesheet" href="public/css/contact.css" />
+    <link rel="stylesheet" href="public/css/header&footer.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rufina:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM Sans:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Salsa:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" />
 </head>
 
+
+
 <body>
-    <div class="crer-une-entreprise">
+    <header>
         {include file="header.tpl"}
+    </header>
+
+    <div class="crer-une-entreprise">
+
 
         <div class="titre">ajouter une entreprise</div>
 
@@ -38,60 +45,86 @@
                 pour publier vos offres facilement.
             </div>
 
-            <label class="nom-de-lentreprise" for="text-input">Nom de l’entreprise :</label>
-            <input class="noment" type="text" id="text-input" name="text-input">
+            <!DOCTYPE html>
 
-            <label class="email1" for="text-input">Email :</label>
-            <input class="email" type="text" id="text-input" name="text-input">
+            <form id="MyForm" action="index.php?action=ajouterentreprise" method="post">
+                <div>
+                    <label class="nom-de-lentreprise" for="nom">Nom de l'entreprise :</label><br />
+                    <input class="noment" type="text" id="nom" name="nom" required />
+                </div>
+                <div>
+                    <label class="email1" for="mail">Email :</label><br />
+                    <input class="email" type="email" id="mail" name="mail" required />
+                </div>
+                <div>
+                    <label class="confiance" for="confiance">Confiance :</label><br />
+                    <input class="conf" type="number" id="confiance" name="confiance" required />
+                </div>
+                <div>
+                    <label class="adresse" for="adresse_complete">Adresse :</label><br />
+                    <input class="adres" type="text" id="adresse_complete" name="adresse_complete" required />
+                </div>
+                <div>
+                    <label class="code-postal" for="code_postal">Code postal :</label><br />
+                    <input class="code" type="text" id="code_postal" name="code_postal" required />
+                </div>
+                <div>
+                    <label class="ville" for="ville">Ville :</label><br />
+                    <input class="vill" type="text" id="ville" name="ville" required />
+                </div>
 
-            <label class="telephone" for="text-input">Téléphone :</label>
-            <input class="tel" type="text" id="text-input" name="text-input">
-
-            <label class="confiance" for="text-input">Confiance :</label>
-            <input class="conf" type="text" id="text-input" name="text-input">
-
-            <label class="adresse" for="text-input">Adresse :</label>
-            <input class="adres" type="text" id="text-input" name="text-input">
-
-            <label class="ville" for="text-input">Ville :</label>
-            <input class="vill" type="text" id="text-input" name="text-input">
-
-            <label class="code-postal" for="text-input">Code postal :</label>
-            <input class="code" type="text" id="text-input" name="text-input">
-
-            <label class="secteur" for="text-input">Secteur :</label>
-            <input class="sec" type="text" id="text-input" name="text-input">
-
-            <label class="taille-de-lentreprise" for="text-input">Taille de l’entreprise :</label>
-            <input class="taille" type="text" id="text-input" name="text-input">
-
-            <label class="descriptionentre" for="text-input">Description de l’entreprise :</label>
-            <input class="description" type="text" id="text-input" name="text-input">
-
-            <label class="mdp" for="text-input">Mot de passe :</label>
-            <input class="mdpp" type="text" id="text-input" name="text-input">
-
-            <label class="confirmezmdp" for="text-input">Confirmez le mot de passe :</label>
-            <input class="cmdpp" type="text" id="text-input" name="text-input">
-
-            <button class="create-btn">Créer</button>
-
-            <div class="check">
-                J’accepte les conditions d’utilisation et la politique de
-                confidentialité
-                <input type="checkbox" id="certify" name="certify">
-            </div>
-            <div class="check2">
-                Je cértifie que toutes les informations entrées sont correctes
-                <input type="checkbox" id="certify" name="certify">
-            </div>
+                <div>
+                    <label class="secteur" for="secteur">Secteur :</label><br />
+                    <select class="sec" id="secteur" name="secteur" required>
+                        <option value="Informatique">Informatique</option>
+                        <option value="BTP">BTP</option>
+                        <option value="Généraliste">Généraliste</option>
+                        <option value="Electronique">Electronique</option>
+                        <option value="Autre">Autre</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="telephone" for="nombre_employes">Nombre d'employés :</label><br />
+                    <input class="tel" type="texte" id="nombre_employes" name="nombre_employes" required />
+                </div>
+                <div>
+                    <label class="descriptionentre" for="description_entreprise">Description de l'entreprise
+                        :</label><br />
+                    <textarea class="description" id="description_entreprise" name="description_entreprise"
+                        required></textarea>
+                </div>
+                <div>
+                    <label class="mdp" for="mot_de_passe">Mot de passe :</label><br />
+                    <input class="mdpp" type="password" id="mot_de_passe" name="mot_de_passe" required />
+                </div>
+                <div>
+                    <label class="confirmezmdp" for="confirmer_mot_de_passe">Confirmer le mot de passe :</label><br />
+                    <input class="cmdpp" type="password" id="confirmer_mot_de_passe" name="confirmer_mot_de_passe"
+                        required />
+                </div>
+                <div>
+                    <label for="lien_logo">Lien du Logo de l'entreprise</label><br />
+                    <textarea id="lien_logo" name="lien_logo" required></textarea>
+                </div>
+                <div class="check">
+                    J’accepte les conditions d’utilisation et la politique de
+                    confidentialité
+                    <input class="check type=" checkbox" id="accept_term" name="accept_term" value="1">
+                </div>
+                <div class="check2">
+                    Je cértifie que toutes les informations entrées sont correctes
+                    <input class="hover" type="checkbox" id="certify_info" name="certify_info" value="1">
+                </div>
+                <button class="hover" type="submit">Envoyer</button>
+            </form>
         </div>
 
         <div class="support-image"></div>
         <div class="sous-titre3">Diffusez vos offres avec nous</div>
-        <img class="image-reading" src="Reading list Customizable Flat Illustrations _ Rafiki Style.png" />
-        <img class="image-agreement" src="Agreement Customizable Flat Illustrations _ Rafiki Style (1).png" />
-        <img class="image-management" src="Time management Customizable Flat Illustrations _ Rafiki Style.png" />
+        <img class="image-reading" src="public\logo\Reading_list_Customizable_Flat_Illustrations___Rafiki_Style.png" />
+        <img class="image-agreement" src="public\logo\Agreement_Customizable_Flat_Illustrations___Rafiki_Style_1.png" />
+        <img class="image-management"
+            src="public\logo\Time_management_Customizable_Flat_Illustrations___Rafiki_Style.png" />
         <div class="texte-1">
             Pilotez facilement les recrutements
         </div>
@@ -108,20 +141,9 @@
         </div>
     </div>
 
+
     <footer>
-        <div class="support-footer"></div>
-        <img class="image-footer" src="logoce.png" />
-        <div class="texte-4">
-            *Les informations recueillie font l’objet d’un traitement informatique
-            de notre part afin de nous permettre de répondre à vos demandes, et
-            éventuellement de vous proposer nos services qui peuvent vous
-            intéresser. Vous bénéficiez d’un droit d’accès, de rectification,
-            d’effacement et de portabilité aux informations vous concernantque vous
-            pouvez exercer conformément aux modalités décrites dans notre politique
-            de confidentialité. Vous pouvez également, pour des motifs légitimes,
-            vous opposer au traitement des données vous concernant. Pour toute
-            information supplémentaire, vous pouvez nous contacter.*
-        </div>
+        {include file="src/view/templates/footer.tpl"}
     </footer>
 </body>
 

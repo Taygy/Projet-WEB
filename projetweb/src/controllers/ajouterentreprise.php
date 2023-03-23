@@ -3,7 +3,7 @@
 require_once('src/modele/model.php');
 function addEntreprise(array $input)
 {
-    require('src/view/ajouterentreprise.php');
+    require('src/view/templates/ajouterentreprise.tpl');
     $nom = null;
     $description_entreprise = null;
     $secteur = null;

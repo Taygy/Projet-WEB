@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="global.css" />
-    <link rel="stylesheet" href="header&footer.css" />
+    <link rel="stylesheet" href="public/css/global.css" />
+    <link rel="stylesheet" href="public/css/header&footer.css" />
 </head>
 <header>
     <div class="header">
