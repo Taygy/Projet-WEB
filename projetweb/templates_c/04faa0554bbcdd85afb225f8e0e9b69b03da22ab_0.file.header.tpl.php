@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-23 14:57:57
+/* Smarty version 4.3.0, created on 2023-03-23 23:18:47
   from 'C:\wamp64\www\Formulaire\FormulairePOST\projetweb\src\view\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641c68f5caab07_94492187',
+  'unifunc' => 'content_641cde573ee8b0_39294785',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '04faa0554bbcdd85afb225f8e0e9b69b03da22ab' => 
     array (
       0 => 'C:\\wamp64\\www\\Formulaire\\FormulairePOST\\projetweb\\src\\view\\templates\\header.tpl',
-      1 => 1679583349,
+      1 => 1679613524,
       2 => 'file',
     ),
   ),
@@ -20,32 +20,36 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_641c68f5caab07_94492187 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641cde573ee8b0_39294785 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="public/css/global.css" />
-    <link rel="stylesheet" href="public/css/header&footer.css" />
+    <link rel="stylesheet" href="public/css/header.css" />
 </head>
-<header>
-    <div class="header">
-        <div class="navbar">
-            <div class="menu">
-                <div class="acc .valign-text-middle"></div>
-                <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="apropos1.html">A propos</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <button class="mon-compte">Mon compte</button>
-            <div class="image-1">
-                <img src="public\logo\logoce.png" alt="Logo de CESI" id="my-image">
+<body>
+    <header>
+        <div class="header">
+            <div class="navbar">
+                <div class="logo">
+                    <div class="image-1">
+                    <img src="public/logo/logoce.png" alt="Logo de CESI" id="my-image">
+                    </div>
+                </div>
+                <button class="mon-compte">Mon compte</button>
+                <div class="menu-icon">
+                    <ul class="nav-links">
+                        <li><a href="index.php?action=homepage"">Accueil</a></li>
+                        <li><a href="index.php?action=apropos">A propos</a></li>
+                        <li><a href="#">Avis</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 </body>
+
 </html><?php }
 }

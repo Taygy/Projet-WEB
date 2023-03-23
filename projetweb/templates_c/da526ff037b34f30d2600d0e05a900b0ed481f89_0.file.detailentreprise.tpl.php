@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-23 10:11:37
+/* Smarty version 4.3.0, created on 2023-03-23 19:36:23
   from 'C:\wamp64\www\Formulaire\FormulairePOST\projetweb\src\view\templates\detailentreprise.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641c25d91835c9_22516634',
+  'unifunc' => 'content_641caa377d3239_99124632',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'da526ff037b34f30d2600d0e05a900b0ed481f89' => 
     array (
       0 => 'C:\\wamp64\\www\\Formulaire\\FormulairePOST\\projetweb\\src\\view\\templates\\detailentreprise.tpl',
-      1 => 1679566294,
+      1 => 1679600181,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_641c25d91835c9_22516634 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641caa377d3239_99124632 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -58,7 +58,8 @@ function content_641c25d91835c9_22516634 (Smarty_Internal_Template $_smarty_tpl)
 
         </p>
         </form>
-        <p><a href="index.php?action=ajouteroffre">Vous voulez ajouter une offre ?</a></p>
+        <p><a href="index.php?action=ajouteroffre&id=<?php echo $_smarty_tpl->tpl_vars['entreprise']->value[0]->id_entreprise;?>
+">Vous voulez ajouter une offre ?</a></p>
         
     </div>
 </body>

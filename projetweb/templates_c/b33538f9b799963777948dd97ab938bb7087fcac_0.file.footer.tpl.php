@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-23 14:57:57
+/* Smarty version 4.3.0, created on 2023-03-23 22:15:43
   from 'C:\wamp64\www\Formulaire\FormulairePOST\projetweb\src\view\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641c68f5cb2bd8_39544172',
+  'unifunc' => 'content_641ccf8fc83fe3_74409901',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b33538f9b799963777948dd97ab938bb7087fcac' => 
     array (
       0 => 'C:\\wamp64\\www\\Formulaire\\FormulairePOST\\projetweb\\src\\view\\templates\\footer.tpl',
-      1 => 1679583366,
+      1 => 1679609742,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_641c68f5cb2bd8_39544172 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641ccf8fc83fe3_74409901 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -43,7 +43,7 @@ function content_641c68f5cb2bd8_39544172 (Smarty_Internal_Template $_smarty_tpl)
                     <h3>Etudiant</h3>
                     <ul>
                         <li><a href="#">Chercher une offre</a></li>
-                        <li><a href="#">Découvrir les entreprises</a></li>
+                        <li><a href="index.php?action=entreprise">Decouvrir des entreprises</a></li>
                     </ul>
                 </div>
                 <div class="col-trouvez-nous">
