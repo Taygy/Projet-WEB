@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="creer-entreprise.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="header&footer.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rufina:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM Sans:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Salsa:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" />
+</head>
+
+<body>
+    <div class="crer-une-entreprise">
+        <header>
+            <div class="header">
+                <div class="navbar">
+                    <div class="menu">
+                        <div class="acc .valign-text-middle"></div>
+                        <ul>
+                            <li><a href="accueilprojet.html">Accueil</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="apropos1.html">A propos</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <button class="mon-compte">Mon compte</button>
+                    <div class="image-1">
+                        <img src="logoce.png" alt="Logo de CESI" id="my-image">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="titre">ajouter une entreprise</div>
+
+        <div class="rectangle-container">
+            <div class="sous-titre">
+                Créer des offres d'emploi en quelques clics grâce à notre plateforme
+            </div>
+            <div class="sous-titre2">
+                Gagnez du temps et de l'efficacité dans la création et la diffusion de
+                vos offres d'emploi grâce à notre plateforme intuitive. En quelques
+                clics seulement, vous pouvez créer une offre complète avec toutes les
+                informations nécessaires, et la diffuser simultanément sur notre
+                réseau de partenaires écoles et universités.
+            </div>
+
+            <img class="support" src="contact1.png" />
+            <div class="vous-cherchez">
+                Vous cherchez à simplifier le recrutement de stagiaires, d'alternants
+                ou de jeunes diplômés pour votre entreprise ? Découvrez nos outils
+                pour publier vos offres facilement.
+            </div>
+            <form id="MyForm" action="creer_entreprise" method="post">
+                <div>
+                    <label class="nom-de-lentreprise" for="nom-entreprise">Nom de l’entreprise :</label>
+                    <input class="noment" type="text" id="nom-entreprise" name="nom-entreprise" required>
+                </div>
+                <div>
+                    <label class="email1" for="email">Email :</label>
+                    <input class="email" type="text" id="email" name="email" required>
+                </div>
+                <div>
+                    <label class="telephone" for="telephone">Téléphone :</label>
+                    <input class="tel" type="text" id="telephone" name="telephone" required>
+                </div>
+                <div>
+                    <label class="confiance" for="confiance">Confiance :</label>
+                    <input class="conf" type="text" id="confiance" name="confiance" required>
+                </div>
+                <div>
+                    <label class="adresse" for="adresse">Adresse :</label>
+                    <input class="adres" type="text" id="adresse" name="adresse" required>
+                </div>
+                <div>
+                    <label class="ville" for="ville">Ville :</label>
+                    <input class="vill" type="text" id="ville" name="ville" required>
+                </div>
+                <div>
+                    <label class="code-postal" for="code-postal">Code postal :</label>
+                    <input class="code" type="text" id="code-postal" name="code-postal" required>
+                </div>
+                <div>
+                    <label class="secteur" for="secteur">Secteur :</label>
+                    <input class="sec" type="text" id="secteur" name="secteur" required>
+                </div>
+                <div>
+                    <label class="taille-de-lentreprise" for="taille-entreprise">Taille de l’entreprise :</label>
+                    <input class="taille" type="text" id="taille-entreprise" name="taille-entreprise" required>
+                </div>
+                <div>
+                    <label class="descriptionentre" for="description-entreprise">Description de l’entreprise :</label>
+                    <input class="description" type="text" id="description-entreprise" name="description-entreprise"
+                        required>
+                </div>
+                <div>
+                    <input class="logoentre" type="file" id="logo" name="logo" accept="image/png, image/jpeg ,pdf">
+                </div>
+                <div>
+                    <label class="mdp" for="mot-de-passe">Mot de passe :</label>
+                    <input class="mdpp" type="password" id="mot-de-passe" name="mot-de-passe" required>
+                </div>
+                <div>
+                    <label class="confirmezmdp" for="confirmez-mot-de-passe">Confirmez le mot de passe :</label>
+                    <input class="cmdpp" type="password" id="confirmez-mot-de-passe" name="confirmez-mot-de-passe"
+                        required>
+                </div>
+
+                <button class=" create-btn">Créer</button>
+
+                <div class="check">
+                    J’accepte les conditions d’utilisation et la politique de
+                    confidentialité
+                    <input type="checkbox" id="certify" name="certify">
+                </div>
+                <div class="check2">
+                    Je cértifie que toutes les informations entrées sont correctes
+                    <input type="checkbox" id="certify" name="certify">
+                </div>
+            </form>
+        </div>
+
+        <div class="support-image"></div>
+        <div class="sous-titre3">Diffusez vos offres avec nous</div>
+        <img class="image-reading" src="Reading list Customizable Flat Illustrations _ Rafiki Style.png" />
+        <img class="image-agreement" src="Agreement Customizable Flat Illustrations _ Rafiki Style (1).png" />
+        <img class="image-management" src="Time management Customizable Flat Illustrations _ Rafiki Style.png" />
+        <div class="texte-1">
+            Pilotez facilement les recrutements
+        </div>
+        <div class="texte-2">
+            Aidez les entreprises à trouver des candidats qualifiés.
+        </div>
+        <div class="texte-3">
+            Multi-diffusez les offres d'emploi de différentes entreprises.
+        </div>
+
+        <div class="questions">Des questions ?</div>
+        <div class="contact-btn19">
+            <button class="contact-btn">Contactez-nous</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="support-footer"></div>
+        <img class="image-footer" src="logoce.png" />
+        <div class="texte-4">
+            *Les informations recueillie font l’objet d’un traitement informatique
+            de notre part afin de nous permettre de répondre à vos demandes, et
+            éventuellement de vous proposer nos services qui peuvent vous
+            intéresser. Vous bénéficiez d’un droit d’accès, de rectification,
+            d’effacement et de portabilité aux informations vous concernantque vous
+            pouvez exercer conformément aux modalités décrites dans notre politique
+            de confidentialité. Vous pouvez également, pour des motifs légitimes,
+            vous opposer au traitement des données vous concernant. Pour toute
+            information supplémentaire, vous pouvez nous contacter.*
+        </div>
+    </footer>
+</body>
+
+</html>

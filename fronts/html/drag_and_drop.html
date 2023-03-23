@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Drag and Drop Download Button</title>
+    <style>
+        #myButton {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: move;
+        }
+
+        .drop-zone {
+            border: 2px dashed #ccc;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .drop-zone.hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+    <script>
+        function dragOver(event) {
+            event.preventDefault();
+            document.querySelector(".drop-zone").classList.add("hover");
+        }
+
+        function dragLeave(event) {
+            event.preventDefault();
+            document.querySelector(".drop-zone").classList.remove("hover");
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            document.querySelector(".drop-zone").classList.remove("hover");
+            const file = event.dataTransfer.files[0];
+            const type = file.type.split("/")[0];
+            if (type === "image" || type === "pdf") {
+                const url = URL.createObjectURL(file);
+                const link = document.createElement("a");
+                link.href = url;
+                link.download = file.name;
+                link.textContent = file.name;
+                document.querySelector(".drop-zone").appendChild(link);
+            } else {
+                alert("Vous ne pouvez télécharger que des fichiers de type image ou pdf.");
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>Drag and Drop Download Button</h1>
+    <p>Déplacez le fichier ici :</p>
+    <div class="drop-zone" ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="drop(event)">
+        Déposez le fichier ici
+    </div>
+    <p>Note: Seuls les fichiers de type image ou pdf sont autorisés.</p>
+</body>
+
+</html>
