@@ -20,7 +20,7 @@
 	?>
 		<div class="news">
 			<p>
-				<img src="<?= $offre->lien_logo ?>">
+				<img src="<?= $offre->logo ?>">
 				<?= $offre->titre; ?> / Durée :
 				<em> <?= $offre->duree; ?></em>
 				<br>

@@ -14,100 +14,87 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" />
 </head>
 
+
+
 <body>
-    <div class="crer-une-entreprise">
-        <header>
+    <header>
         {include file="src/view/templates/header.tpl"}
-       </header>
+    </header>
 
-        <div class="titre">ajouter une entreprise</div>
+    <div class="crer-une-entreprise">
 
-        <div class="rectangle-container">
-            <div class="sous-titre">
-                Créer des offres d'emploi en quelques clics grâce à notre plateforme
-            </div>
-            <div class="sous-titre2">
-                Gagnez du temps et de l'efficacité dans la création et la diffusion de
-                vos offres d'emploi grâce à notre plateforme intuitive. En quelques
-                clics seulement, vous pouvez créer une offre complète avec toutes les
-                informations nécessaires, et la diffuser simultanément sur notre
-                réseau de partenaires écoles et universités.
-            </div>
 
-            <img class="support" src="contact1.png" />
-            <div class="vous-cherchez">
-                Vous cherchez à simplifier le recrutement de stagiaires, d'alternants
-                ou de jeunes diplômés pour votre entreprise ? Découvrez nos outils
-                pour publier vos offres facilement.
-            </div>
-            <form id="MyForm" action="index.php?action=ajouterentreprise" method="post">
+        <div class="titre">Modifier une entreprise</div>
+
+            <form id="MyForm" action="index.php?action=modifierentreprise" method="PUT">
                 <div>
-                    <label class="nom-de-lentreprise" for="nom">Nom de l’entreprise :</label>
-                    <input class="noment" type="text" id="nom" name="nom" required>
+                    <label class="nom-de-lentreprise" for="nom">Nom de l'entreprise :</label><br />
+                    <input class="noment" type="text" id="nom" name="nom" required />
                 </div>
                 <div>
-                    <label class="email1" for="mail">Email :</label>
-                    <input class="email" type="email" id="mail" name="mail" required>
+                    <label class="email1" for="mail">Email :</label><br />
+                    <input class="email" type="email" id="mail" name="mail" required />
                 </div>
                 <div>
-                    <label class="telephone" for="nombre_employes">Nombre d'employés :</label>
-                    <input class="tel" type="text" id="nombre_employes" name="nombre_employes" required>
+                    <label class="confiance" for="confiance">Confiance :</label><br />
+                    <input class="conf" type="number" id="confiance" name="confiance" required />
                 </div>
                 <div>
-                    <label class="confiance" for="confiance">Confiance :</label>
-                    <input class="conf" type="text" id="confiance" name="confiance" required>
+                    <label class="adresse" for="adresse_complete">Adresse :</label><br />
+                    <input class="adres" type="text" id="adresse_complete" name="adresse_complete" required />
                 </div>
                 <div>
-                    <label class="adresse" for="adresse_complete">Adresse :</label>
-                    <input class="adres" type="text" id="adresse_complete" name="adresse_complete" required>
+                    <label class="code-postal" for="code_postal">Code postal :</label><br />
+                    <input class="code" type="text" id="code_postal" name="code_postal" required />
                 </div>
                 <div>
-                    <label class="ville" for="ville">Ville :</label>
-                    <input class="vill" type="text" id="ville" name="ville" required>
+                    <label class="ville" for="ville">Ville :</label><br />
+                    <input class="vill" type="text" id="ville" name="ville" required />
                 </div>
+
                 <div>
-                    <label class="code-postal" for="code_postal">Code postal :</label>
-                    <input class="code" type="text" id="code_postal" name="code_postal" required>
-                </div>
-                <div>
-                    <label class="secteur" for="secteur">Secteur :</label>
+                    <label class="secteur" for="secteur">Secteur :</label><br />
                     <select class="sec" id="secteur" name="secteur" required>
                         <option value="Informatique">Informatique</option>
                         <option value="BTP">BTP</option>
                         <option value="Généraliste">Généraliste</option>
                         <option value="Electronique">Electronique</option>
                         <option value="Autre">Autre</option>
-                    </select>                
+                    </select>
                 </div>
                 <div>
-                    <label class="descriptionentre" for="description_entreprise">Description de l’entreprise :</label>
-                    <input class="description" type="text" id="description_entreprise" name="description_entreprise"
-                        required>
+                    <label class="telephone" for="nombre_employes">Nombre d'employés :</label><br />
+                    <input class="tel" type="texte" id="nombre_employes" name="nombre_employes" required />
                 </div>
                 <div>
-                    <input class="fefe" type="file" id="logo" name="logo" accept="image/png">
+                    <label class="descriptionentre" for="description_entreprise">Description de l'entreprise
+                        :</label><br />
+                    <textarea class="description" id="description_entreprise" name="description_entreprise"
+                        required></textarea>
                 </div>
                 <div>
-                    <label class="mdp" for="mot_de_passe">Mot de passe :</label>
-                    <input class="mdpp" type="password" id="mot_de_passe" name="mot_de_passe" required>
+                    <label class="mdp" for="mot_de_passe">Mot de passe :</label><br />
+                    <input class="mdpp" type="password" id="mot_de_passe" name="mot_de_passe" required />
                 </div>
                 <div>
-                    <label class="confirmezmdp" for="confirmer_mot_de_passe">Confirmez le mot de passe :</label>
+                    <label class="confirmezmdp" for="confirmer_mot_de_passe">Confirmer le mot de passe :</label><br />
                     <input class="cmdpp" type="password" id="confirmer_mot_de_passe" name="confirmer_mot_de_passe"
-                        required>
+                        required />
                 </div>
-
-                <button class=" create-btn">Créer</button>
-
+                <div>
+                    <label for="logo">Lien du Logo de l'entreprise</label><br />
+                    <textarea id="logo" name="logo" required></textarea>
+                </div>
                 <div class="check">
                     J’accepte les conditions d’utilisation et la politique de
                     confidentialité
-                    <input class="hover" type="checkbox" id="accept_term" name="accept_term" value="1">
+                    <input class="check type=" checkbox" id="accept_term" name="accept_term" value="1">
                 </div>
                 <div class="check2">
                     Je cértifie que toutes les informations entrées sont correctes
                     <input class="hover" type="checkbox" id="certify_info" name="certify_info" value="1">
                 </div>
+                <button class="hover" type="submit">Envoyer</button>
             </form>
         </div>
 
@@ -133,7 +120,7 @@
         </div>
     </div>
 
-   
+
     <footer>
         {include file="src/view/templates/footer.tpl"}
     </footer>

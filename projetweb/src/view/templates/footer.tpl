@@ -20,7 +20,7 @@
                     <h3>Etudiant</h3>
                     <ul>
                         <li><a href="#">Chercher une offre</a></li>
-                        <li><a href="#">Découvrir les entreprises</a></li>
+                        <li><a href="index.php?action=entreprise">Decouvrir des entreprises</a></li>
                     </ul>
                 </div>
                 <div class="col-trouvez-nous">

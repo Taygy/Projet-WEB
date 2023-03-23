@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="public/css/global.css" />
-    <link rel="stylesheet" href="public/css/header&footer.css" />
+    <link rel="stylesheet" href="public/css/header.css" />
 </head>
-<header>
-    <div class="header">
-        <div class="navbar">
-            <div class="menu">
-                <div class="acc .valign-text-middle"></div>
-                <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="apropos1.html">A propos</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <button class="mon-compte">Mon compte</button>
-            <div class="image-1">
-                <img src="public\logo\logoce.png" alt="Logo de CESI" id="my-image">
+<body>
+    <header>
+        <div class="header">
+            <div class="navbar">
+                <div class="logo">
+                    <div class="image-1">
+                    <img src="public/logo/logoce.png" alt="Logo de CESI" id="my-image">
+                    </div>
+                </div>
+                <button class="mon-compte">Mon compte</button>
+                <div class="menu-icon">
+                    <ul class="nav-links">
+                        <li><a href="index.php?action=homepage"">Accueil</a></li>
+                        <li><a href="index.php?action=apropos">A propos</a></li>
+                        <li><a href="#">Avis</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 </body>
+
 </html>

@@ -16,7 +16,7 @@
 	foreach ($entreprises as $entreprise) {
 	?>
 		<div class="news">
-			<img src="<?= $entreprise->lien_logo ?>">
+			<img src="<?= $entreprise->logo ?>">
 			<p>
 				<?= $entreprise->nom ?> / Confiance :
 				<?= $entreprise->confiance; ?>
@@ -30,6 +30,7 @@
 	} // The end of the posts loop.
 	?>
 	<p><a href="index.php?action=ajouterentreprise">Vous voulez ajouter une entreprise ?</a></p>
+	<p><a href="index.php?action=modifierentreprise">Vous voulez modifier une entreprise ?</a></p>
 </body>
 
 </html>

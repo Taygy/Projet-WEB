@@ -28,7 +28,7 @@
             {$entreprise[0]->nombre_employes}
         </p>
         </form>
-        <p><a href="index.php?action=ajouteroffre">Vous voulez ajouter une offre ?</a></p>
+        <p><a href="index.php?action=ajouteroffre&id={$entreprise[0]->id_entreprise}">Vous voulez ajouter une offre ?</a></p>
         
     </div>
 </body>

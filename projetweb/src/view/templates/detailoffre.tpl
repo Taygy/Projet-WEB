@@ -56,6 +56,8 @@
             <div class="autres">Voir les autres offres</div>
             <button class="btn-ret">Retour</button>
         </div>
+        
+        <p><a href="index.php?action=ajouteroffre&id={$entreprise[0]->id_entreprise}">Vous voulez ajouter une offre ?</a></p>
     </div>
     <!--footer-->
     <div class="footer-dark">

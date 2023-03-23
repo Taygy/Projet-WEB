@@ -43,13 +43,23 @@ function getEntreprise($identifier)
 	return $entreprise;
 }
 
-function createEntreprise(string $nom, string $description_entreprise, string $secteur, string $mail, string $confiance, string $nombre_employes, string $lien_logo, string $visible)
+function createEntreprise(string $nom, string $description_entreprise, string $secteur, string $mail, string $confiance, string $nombre_employes, string $logo, string $visible)
 {
 	$database = dbConnect();
 	$statement = $database->prepare(
-		'INSERT INTO entreprise(nom, description_entreprise, secteur, mail, confiance, nombre_employes, lien_logo, visible) VALUES(?, ?, ?, ?, ?, ?, ?, ?)'
+		'INSERT INTO entreprise(nom, description_entreprise, secteur, mail, confiance, nombre_employes, logo, visible) VALUES(?, ?, ?, ?, ?, ?, ?, ?)'
 	);
-	$affectedLines = $statement->execute([$nom, $description_entreprise, $secteur, $mail, $confiance, $nombre_employes, $lien_logo, $visible]);
+	$affectedLines = $statement->execute([$nom, $description_entreprise, $secteur, $mail, $confiance, $nombre_employes, $logo, $visible]);
+	return ($affectedLines > 0);
+}
+
+function modifEntreprise(int $id_entreprise, string $nom, string $description_entreprise, string $secteur, string $mail, string $confiance, string $nombre_employes, string $lien_logo, string $visible)
+{
+	$database = dbConnect();
+	$statement = $database->prepare(
+		'UPDATE entreprise SET nom = ?, description_entreprise = ?, secteur = ?, mail = ?, confiance = ?, nombre_employes = ?, lien_logo = ?, visible = ? WHERE id_entreprise = ?'
+	);
+	$affectedLines = $statement->execute([$nom, $description_entreprise, $secteur, $mail, $confiance, $nombre_employes, $lien_logo, $visible, $id_entreprise]);
 	return ($affectedLines > 0);
 }
 
@@ -63,25 +73,37 @@ function addAdresse(string $ville, string $code_postal, string $adresse_complete
 	return ($affectedLines > 0);
 }
 
-function createOffre(string $titre, string $duree, string $remuneration, string $description_offre, string $nombre_places)
+function modifAdresse(int $id_adresse, string $ville, string $code_postal, string $adresse_complete)
 {
 	$database = dbConnect();
 	$statement = $database->prepare(
-		'INSERT INTO offre(titre,duree,remuneration,description_offre,nombre_places) VALUES(?, ?, ?, ?, ?)'
+		'UPDATE adresse SET ville = ?, code_postal = ?, adresse_complete = ? WHERE id_adresse = ?'
 	);
-	$affectedLines = $statement->execute([$titre, $duree, $remuneration, $description_offre, $nombre_places]);
+	$affectedLines = $statement->execute([$ville, $code_postal, $adresse_complete, $id_adresse]);
 	return ($affectedLines > 0);
 }
 
-function addCompetence(string $competence)
+function createOffre(string $id_entreprise, string $titre, string $duree, string $remuneration, string $description_offre, string $nombre_places)
 {
 	$database = dbConnect();
 	$statement = $database->prepare(
-		'INSERT INTO competence(competence) VALUES(?)'
+		'INSERT INTO offre(id_entreprise,titre,duree,remuneration,description_offre,nombre_places) VALUES(?,?, ?, ?, ?, ?)'
 	);
-	$affectedLines = $statement->execute([$competence]);
+	$affectedLines = $statement->execute([$id_entreprise, $titre, $duree, $remuneration, $description_offre, $nombre_places]);
 	return ($affectedLines > 0);
 }
+
+function addCompetence(string $id_competence)
+{
+	$database = dbConnect();
+	$statement = $database->prepare(
+		'INSERT INTO competence(id_competence) VALUES(?)'
+	);
+	$affectedLines = $statement->execute([$id_competence]);
+	return ($affectedLines > 0);
+}
+
+
 
 function getCommentaires($identifier)
 {
