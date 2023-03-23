@@ -1,0 +1,364 @@
+.cadre {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: var(--font-size-3xl);
+    width: 877px;
+    height: 1747px;
+}
+
+.durestage1,
+.titre1 {
+    position: absolute;
+    top: 80.5px;
+    left: calc(50% - 480.5px);
+    display: flex;
+    align-items: center;
+    width: 133px;
+    height: 61px;
+}
+
+.durestage1 {
+    top: 253px;
+    width: 243px;
+}
+
+
+.competence1 {
+    position: absolute;
+    top: 430px;
+    left: calc(50% - 480.5px);
+    display: flex;
+    align-items: center;
+    width: 333px;
+    height: 61px;
+}
+
+.nvscolaire {
+    position: absolute;
+    top: 600px;
+    left: calc(50% - 480.5px);
+    display: flex;
+    align-items: center;
+    width: 333px;
+    height: 61px;
+}
+
+.grandtitre {
+    position: absolute;
+    font-size: var(--font-size-60xl);
+    text-transform: uppercase;
+    font-family: var(--font-rufina);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 654px;
+    height: 119px;
+    margin-top: -300px;
+    left: 29px;
+}
+
+.nbplaces {
+    position: absolute;
+    top: 768px;
+    left: calc(50% - 480.5px);
+    display: flex;
+    align-items: center;
+    width: 333px;
+    height: 61px;
+}
+
+.description1,
+.check,
+.remuneration1 {
+    position: absolute;
+    top: 936px;
+    left: calc(50% - 480.5px);
+    display: flex;
+    align-items: center;
+    width: 333px;
+    height: 61px;
+}
+
+.description1,
+.check {
+    top: 1104px;
+    width: 302px;
+}
+
+.check {
+    top: 1542px;
+    left: calc(50% - 350.5px);
+    width: 631px;
+}
+
+.publier1 {
+    position: absolute;
+    top: 14.9px;
+    left: 27.33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 133.64px;
+    height: 30px;
+}
+
+.nom-de-lentreprise {
+    position: absolute;
+    top: 80.5px;
+    left: 29px;
+    display: flex;
+    align-items: center;
+    width: 333px;
+    height: 61px;
+}
+
+.confiance {
+    position: absolute;
+    top: 430px;
+    left: 434px;
+    display: flex;
+    align-items: center;
+    width: 333px;
+    height: 61px;
+}
+
+.secteur {
+    position: absolute;
+    top: 600px;
+    left: calc(50% - 480.5px);
+    display: flex;
+    align-items: center;
+    width: 333px;
+    height: 61px;
+}
+
+.objet-1 {
+    position: absolute;
+    top: 660px;
+    left: 29px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-silver);
+    border: 3px solid var(--color-springgreen);
+    box-sizing: border-box;
+    width: 333px;
+    height: 88px;
+    color: var(--color-white);
+}
+
+.conf {
+    position: absolute;
+    top: 490px;
+    left: 515px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-silver);
+    border: 3px solid var(--color-springgreen);
+    box-sizing: border-box;
+    width: 333px;
+    height: 88px;
+    color: var(--color-white);
+}
+
+.pub {
+    position: absolute;
+    top: 1644px;
+    left: 341px;
+    width: 196.35px;
+    height: 60px;
+    text-align: center;
+    color: var(--color-white);
+}
+
+#certify {
+    border: 3px solid;
+    border-color: var(--color-springgreen);
+    border-radius: 20px;
+    height: 41px;
+    left: -80px;
+    position: absolute;
+    width: 52px;
+}
+
+
+.vector-parent1 {
+    position: absolute;
+    top: 537px;
+    left: 325px;
+    width: 1019px;
+    height: 1747px;
+    font-size: var(--font-size-6xl);
+    color: var(--color-darkgray);
+}
+
+.titre {
+    position: absolute;
+    top: 150px;
+    left: 29px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-silver);
+    border: 3px solid var(--color-springgreen);
+    box-sizing: border-box;
+    width: 819px;
+    height: 88px;
+    color: var(--color-white);
+}
+
+.durestage {
+    position: absolute;
+    top: 318px;
+    left: 29px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-silver);
+    border: 3px solid var(--color-springgreen);
+    box-sizing: border-box;
+    width: 819px;
+    height: 88px;
+    color: var(--color-white);
+}
+
+.tel {
+    position: absolute;
+    top: 490px;
+    left: 29px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-silver);
+    border: 3px solid var(--color-springgreen);
+    box-sizing: border-box;
+    width: 333px;
+    height: 88px;
+    color: var(--color-white);
+}
+
+.vill {
+    position: absolute;
+    top: 1041px;
+    left: 29px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-silver);
+    border: 3px solid var(--color-springgreen);
+    box-sizing: border-box;
+    width: 333px;
+    height: 88px;
+    color: var(--color-white);
+}
+
+.competence {
+    position: absolute;
+    top: 490px;
+    left: 29px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-silver);
+    border: 3px solid var(--color-springgreen);
+    box-sizing: border-box;
+    width: 819px;
+    height: 88px;
+    color: var(--color-white);
+}
+
+.scolaire {
+    position: absolute;
+    top: 660px;
+    left: 29px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-silver);
+    border: 3px solid var(--color-springgreen);
+    box-sizing: border-box;
+    width: 819px;
+    height: 88px;
+    color: var(--color-white);
+}
+
+.places {
+    position: absolute;
+    top: 828px;
+    left: 29px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-silver);
+    border: 3px solid var(--color-springgreen);
+    box-sizing: border-box;
+    width: 819px;
+    height: 88px;
+    color: var(--color-white);
+}
+
+.remuneration {
+    position: absolute;
+    top: 996px;
+    left: 29px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-silver);
+    border: 3px solid var(--color-springgreen);
+    box-sizing: border-box;
+    width: 819px;
+    height: 88px;
+    color: var(--color-white);
+}
+
+.description {
+    position: absolute;
+    top: 1164px;
+    left: 29px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-silver);
+    border: 3px solid var(--color-springgreen);
+    box-sizing: border-box;
+    width: 819px;
+    height: 323px;
+    color: var(--color-white);
+}
+
+
+.btn-pub {
+    padding: 5px 15px;
+    background-color: var(--color-springgreen);
+    border: 1px solid var(--color-springgreen);
+    color: white;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 30px;
+    right: 200px;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 135px;
+    top: 0;
+    left: 0;
+    border-radius: var(--br-19xl);
+    width: 196.35px;
+    height: 60px;
+}
+
+.btn-pub:hover {
+    color: inherit;
+    background-color: var(--color-gray-300);
+}
+
+.a-propos18,
+.accueil19,
+.avis19,
+.contact20 {
+    position: absolute;
+    top: 33px;
+    left: 774px;
+    font-size: var(--font-size-5xl);
+    text-align: center;
+}
+
+.crer-offre {
+    position: relative;
+    background-color: var(--color-gray-200);
+    width: 100%;
+    height: 2821px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-xl);
+    color: var(--color-white);
+    font-family: var(--font-dm-sans);
+}
