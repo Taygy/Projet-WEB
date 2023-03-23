@@ -48,6 +48,18 @@
     object-fit: cover;
 }
 
+.fefe {
+    margin: 0.4rem 0;
+    position: absolute;
+    top: 1840px;
+    left: 750px;
+    border-radius: var(--br-xl);
+    border: 3px solid var(--color-springgreen);
+    width: 400px;
+    height: 88px;
+    color: var(--color-white);
+}
+
 .image-management,
 .image-agreement {
     position: absolute;
@@ -280,7 +292,7 @@
     box-sizing: border-box;
     width: 333px;
     height: 88px;
-    color: var(--color-white);
+    color: var(--color-springgreen);
 }
 
 .taille {
@@ -571,7 +583,7 @@
 
 .titre {
     position: absolute;
-    top: 11px;
+    top: 163px;
     left: calc(50% - 540px);
     font-size: var(--font-size-60xl);
     text-transform: uppercase;
@@ -581,7 +593,6 @@
     justify-content: center;
     width: 1074px;
     height: 119px;
-    color: var(--color-white);
 }
 
 .crer-une-entreprise {
