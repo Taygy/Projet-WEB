@@ -7,6 +7,9 @@ require_once('src/controllers/entreprise.php');
 require_once('src/controllers/detailentreprise.php');
 require_once('src/controllers/ajouterentreprise.php');
 require_once('src/controllers/ajouteroffre.php');
+require_once('src/controllers/modifierentreprise.php');
+require_once('src/controllers/apropos.php');
+
 
 if (isset($_GET['action']) && $_GET['action'] !== '') {
     if ($_GET['action'] === 'offre') {
@@ -40,8 +43,23 @@ if (isset($_GET['action']) && $_GET['action'] !== '') {
         }
     } elseif ($_GET['action'] === 'ajouterentreprise') {
         addEntreprise($_POST);
+    } elseif ($_GET['action'] === 'homepage') {
+        homepage();
+    } elseif ($_GET['action'] === 'apropos') {
+        apropos();
+    } elseif ($_GET['action'] === 'modifierentreprise') {
+        parse_str(file_get_contents("php://input"), $_PUT);
+        changeEntreprise($_PUT);
     } elseif ($_GET['action'] === 'ajouteroffre') {
-        addOffre($_POST);
+        if (isset($_GET['id']) && $_GET['id'] > 0) {
+            $identifier = $_GET['id'];
+
+            addOffre($_POST, $identifier);
+        } else {
+            echo 'Erreur : aucun identifiant de billet envoyé';
+
+            die;
+        }
     }
 } else {
     homepage();
