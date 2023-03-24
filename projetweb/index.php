@@ -43,13 +43,22 @@ if (isset($_GET['action']) && $_GET['action'] !== '') {
         }
     } elseif ($_GET['action'] === 'ajouterentreprise') {
         addEntreprise($_POST);
+    } elseif ($_GET['action'] === 'deleteentreprise') {
+        deleteEntreprise($_POST);
     } elseif ($_GET['action'] === 'homepage') {
         homepage();
     } elseif ($_GET['action'] === 'apropos') {
         apropos();
     } elseif ($_GET['action'] === 'modifierentreprise') {
-        parse_str(file_get_contents("php://input"), $_PUT);
-        changeEntreprise($_PUT);
+        if (isset($_GET['id']) && $_GET['id'] > 0) {
+            $identifier = $_GET['id'];
+
+            changeEntreprise($_POST, $identifier);
+        } else {
+            echo 'Erreur : CDE aucun identifiant de billet envoyé';
+
+            die;
+        }
     } elseif ($_GET['action'] === 'ajouteroffre') {
         if (isset($_GET['id']) && $_GET['id'] > 0) {
             $identifier = $_GET['id'];

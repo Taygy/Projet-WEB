@@ -26,7 +26,7 @@
 
         <div class="titre">Modifier une entreprise</div>
 
-            <form id="MyForm" action="index.php?action=modifierentreprise" method="PUT">
+            <form id="MyForm" action="index.php?action=modifierentreprise" method="post">
                 <div>
                     <label class="nom-de-lentreprise" for="nom">Nom de l'entreprise :</label><br />
                     <input class="noment" type="text" id="nom" name="nom" required />

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-24 09:02:50
+/* Smarty version 4.3.0, created on 2023-03-24 15:36:31
   from 'C:\wamp64\www\Formulaire\FormulairePOST\projetweb\src\view\templates\modifierentreprise.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641d673aabe540_69314050',
+  'unifunc' => 'content_641dc37f0363a1_75478555',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6b67604ba1a7feb353eb0e313caaf4443636439d' => 
     array (
       0 => 'C:\\wamp64\\www\\Formulaire\\FormulairePOST\\projetweb\\src\\view\\templates\\modifierentreprise.tpl',
-      1 => 1679648568,
+      1 => 1679672174,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:src/view/templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_641d673aabe540_69314050 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641dc37f0363a1_75478555 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -52,7 +52,7 @@ function content_641d673aabe540_69314050 (Smarty_Internal_Template $_smarty_tpl)
 
         <div class="titre">Modifier une entreprise</div>
 
-            <form id="MyForm" action="index.php?action=modifierentreprise" method="PUT">
+            <form id="MyForm" action="index.php?action=modifierentreprise" method="post">
                 <div>
                     <label class="nom-de-lentreprise" for="nom">Nom de l'entreprise :</label><br />
                     <input class="noment" type="text" id="nom" name="nom" required />

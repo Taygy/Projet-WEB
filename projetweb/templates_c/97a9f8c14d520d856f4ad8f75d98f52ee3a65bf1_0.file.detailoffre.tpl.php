@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-23 14:57:57
+/* Smarty version 4.3.0, created on 2023-03-24 14:32:36
   from 'C:\wamp64\www\Formulaire\FormulairePOST\projetweb\src\view\templates\detailoffre.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641c68f5ca05b0_88885384',
+  'unifunc' => 'content_641db484dd4809_99960801',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '97a9f8c14d520d856f4ad8f75d98f52ee3a65bf1' => 
     array (
       0 => 'C:\\wamp64\\www\\Formulaire\\FormulairePOST\\projetweb\\src\\view\\templates\\detailoffre.tpl',
-      1 => 1679566957,
+      1 => 1679668355,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:src/view/templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_641c68f5ca05b0_88885384 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641db484dd4809_99960801 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -31,8 +31,8 @@ function content_641c68f5ca05b0_88885384 (Smarty_Internal_Template $_smarty_tpl)
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <link rel="stylesheet" href="src\public\css\global.css" />
-    <link rel="stylesheet" href="src\public\css\header&footer.css" />
+    <link rel="stylesheet" href="public\css\global.css" />
+    <link rel="stylesheet" href="public\css\header&footer.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rufina:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM Sans:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Salsa:wght@400&display=swap" />
@@ -91,6 +91,9 @@ function content_641c68f5ca05b0_88885384 (Smarty_Internal_Template $_smarty_tpl)
             <div class="autres">Voir les autres offres</div>
             <button class="btn-ret">Retour</button>
         </div>
+        
+        <p><a href="index.php?action=ajouteroffre&id=<?php echo $_smarty_tpl->tpl_vars['entreprise']->value[0]->id_entreprise;?>
+">Vous voulez ajouter une offre ?</a></p>
     </div>
     <!--footer-->
     <div class="footer-dark">
