@@ -20,7 +20,7 @@
 	?>
 		<div class="news">
 			<p>
-				<img src="<?= $soffre->lien_logo ?>">
+				<img src="<?= $soffre->logo ?>">
 				<?= $soffre->titre; ?> / Durée :
 				<em> <?= $soffre->duree; ?></em>
 				<br>

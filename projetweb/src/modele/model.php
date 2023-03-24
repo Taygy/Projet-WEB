@@ -25,6 +25,16 @@ function getOffre($identifier)
 	return $offre;
 }
 
+function getAdresseIdByEntrepriseId(int $id_entreprise)
+{
+	$database = dbConnect();
+	$statement = $database->prepare(
+		'SELECT id_adresse FROM entreprise WHERE id_entreprise = ?'
+	);
+	$statement->execute([$id_entreprise]);
+	$result = $statement->fetch(PDO::FETCH_ASSOC);
+	return $result ? intval($result['id_adresse']) : 0;
+}
 
 function getEntreprises()
 {
@@ -63,6 +73,16 @@ function modifEntreprise(int $id_entreprise, string $nom, string $description_en
 	return ($affectedLines > 0);
 }
 
+function deleteEntreprise(int $id_entreprise)
+{
+	$database = dbConnect();
+	$statement = $database->prepare(
+		'DELETE FROM entreprise WHERE id_entreprise = ?'
+	);
+	$affectedLines = $statement->execute([$id_entreprise]);
+	return ($affectedLines > 0);
+}
+
 function addAdresse(string $ville, string $code_postal, string $adresse_complete)
 {
 	$database = dbConnect();
@@ -80,6 +100,16 @@ function modifAdresse(int $id_adresse, string $ville, string $code_postal, strin
 		'UPDATE adresse SET ville = ?, code_postal = ?, adresse_complete = ? WHERE id_adresse = ?'
 	);
 	$affectedLines = $statement->execute([$ville, $code_postal, $adresse_complete, $id_adresse]);
+	return ($affectedLines > 0);
+}
+
+function deleteAdresse(int $id_adresse)
+{
+	$database = dbConnect();
+	$statement = $database->prepare(
+		'DELETE FROM adresse WHERE id_adresse = ?'
+	);
+	$affectedLines = $statement->execute([$id_adresse]);
 	return ($affectedLines > 0);
 }
 

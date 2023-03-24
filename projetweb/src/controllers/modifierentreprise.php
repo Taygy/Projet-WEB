@@ -35,7 +35,7 @@ function changeEntreprise(array $input)
             if (!$success2) {
                 die('Impossible de modifier l\'adresse !');
             } else {
-                header('Location: index.php?action=modifierentreprise');
+                header('Location: index.php?action=modifierentreprise&id={$entreprise[0]->id_entreprise}');
             }
         }
     } else {

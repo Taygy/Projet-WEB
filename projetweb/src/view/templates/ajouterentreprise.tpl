@@ -99,14 +99,10 @@
 
                 <button class=" create-btn">Créer</button>
 
+               
                 <div class="check">
-                    J’accepte les conditions d’utilisation et la politique de
-                    confidentialité
-                    <input class="hover" type="checkbox" id="accept_term" name="accept_term" value="1">
-                </div>
-                <div class="check2">
-                    Je cértifie que toutes les informations entrées sont correctes
-                    <input class="hover" type="checkbox" id="certify_info" name="certify_info" value="1">
+                    Je certifie que toutes les informations entrées sont correctes
+                    <input type="checkbox" id="certify" name="certify" required>
                 </div>
             </form>
         </div>

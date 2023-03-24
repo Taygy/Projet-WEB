@@ -13,9 +13,12 @@
 </head>
 
 <body>
+        
     <div class="a-propos">
+        
         <div class="hero-section">
             <div class="hero-left">
+            
                 <div class="qui-sommes-nous">Qui sommes-nous ?</div>
                 <div class="nous-sommes-une">
                     Nous sommes une entreprise passionnée par l'avenir des étudiants et
@@ -30,9 +33,7 @@
                 <img class="image-4-icon" src="public\logo\aproposimage1.png" />
             </div>
         </div>
-         <header>
-            {include file="src/view/templates/header.tpl"}
-        </header>
+        
         <div class="education">
             <div class="education-child"></div>
             <img class="right-icon" src="public\logo\aproposimage2.png" />
@@ -62,6 +63,9 @@
                 </div>
             </div>
         </div>
+        <header>
+                {include file="src/view/templates/header.tpl"}
+        </header>
         <div class="skills">
             <div class="left1">
                 <div class="envie-den-savoir">Envie d’en savoir plus ?</div>

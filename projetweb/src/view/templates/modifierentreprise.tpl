@@ -82,41 +82,14 @@
                         required />
                 </div>
                 <div>
-                    <label for="logo">Lien du Logo de l'entreprise</label><br />
-                    <textarea id="logo" name="logo" required></textarea>
+                    <input class="fefe" type="file" id="logo" name="logo" accept="image/png">
                 </div>
                 <div class="check">
-                    J’accepte les conditions d’utilisation et la politique de
-                    confidentialité
-                    <input class="check type=" checkbox" id="accept_term" name="accept_term" value="1">
+                    Je certifie que toutes les informations entrées sont correctes
+                    <input type="checkbox" id="certify" name="certify" required>
                 </div>
-                <div class="check2">
-                    Je cértifie que toutes les informations entrées sont correctes
-                    <input class="hover" type="checkbox" id="certify_info" name="certify_info" value="1">
-                </div>
-                <button class="hover" type="submit">Envoyer</button>
+                <button class="create-btn">Modifier</button>
             </form>
-        </div>
-
-        <div class="support-image"></div>
-        <div class="sous-titre3">Diffusez vos offres avec nous</div>
-        <img class="image-reading" src="public\logo\Reading_list_Customizable_Flat_Illustrations___Rafiki_Style.png" />
-        <img class="image-agreement" src="public\logo\Agreement_Customizable_Flat_Illustrations___Rafiki_Style_1.png" />
-        <img class="image-management"
-            src="public\logo\Time_management_Customizable_Flat_Illustrations___Rafiki_Style.png" />
-        <div class="texte-1">
-            Pilotez facilement les recrutements
-        </div>
-        <div class="texte-2">
-            Aidez les entreprises à trouver des candidats qualifiés.
-        </div>
-        <div class="texte-3">
-            Multi-diffusez les offres d'emploi de différentes entreprises.
-        </div>
-
-        <div class="questions">Des questions ?</div>
-        <div class="contact-btn19">
-            <button class="contact-btn">Contactez-nous</button>
         </div>
     </div>
 
