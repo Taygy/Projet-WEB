@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-23 21:56:38
+/* Smarty version 4.3.0, created on 2023-03-24 08:45:29
   from 'C:\wamp64\www\Formulaire\FormulairePOST\projetweb\src\view\templates\ajouterentreprise.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641ccb16be8701_03008528',
+  'unifunc' => 'content_641d63291cfa45_97918062',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '20d45b8ffa5cbec4987ee9922769c7570356ca0e' => 
     array (
       0 => 'C:\\wamp64\\www\\Formulaire\\FormulairePOST\\projetweb\\src\\view\\templates\\ajouterentreprise.tpl',
-      1 => 1679608594,
+      1 => 1679647524,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:src/view/templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_641ccb16be8701_03008528 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641d63291cfa45_97918062 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -125,14 +125,10 @@ function content_641ccb16be8701_03008528 (Smarty_Internal_Template $_smarty_tpl)
 
                 <button class=" create-btn">Créer</button>
 
+               
                 <div class="check">
-                    J’accepte les conditions d’utilisation et la politique de
-                    confidentialité
-                    <input class="hover" type="checkbox" id="accept_term" name="accept_term" value="1">
-                </div>
-                <div class="check2">
-                    Je cértifie que toutes les informations entrées sont correctes
-                    <input class="hover" type="checkbox" id="certify_info" name="certify_info" value="1">
+                    Je certifie que toutes les informations entrées sont correctes
+                    <input type="checkbox" id="certify" name="certify" required>
                 </div>
             </form>
         </div>

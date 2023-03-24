@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-23 23:20:22
+/* Smarty version 4.3.0, created on 2023-03-24 08:48:04
   from 'C:\wamp64\www\Formulaire\FormulairePOST\projetweb\src\view\templates\apropos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641cdeb632b769_28634150',
+  'unifunc' => 'content_641d63c4945f08_07779473',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'db7cb4f7ebf3e617197cddd2f4a9c7b646b215cb' => 
     array (
       0 => 'C:\\wamp64\\www\\Formulaire\\FormulairePOST\\projetweb\\src\\view\\templates\\apropos.tpl',
-      1 => 1679613618,
+      1 => 1679647682,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:src/view/templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_641cdeb632b769_28634150 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641d63c4945f08_07779473 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -38,9 +38,12 @@ function content_641cdeb632b769_28634150 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 
 <body>
+        
     <div class="a-propos">
+        
         <div class="hero-section">
             <div class="hero-left">
+            
                 <div class="qui-sommes-nous">Qui sommes-nous ?</div>
                 <div class="nous-sommes-une">
                     Nous sommes une entreprise passionnée par l'avenir des étudiants et
@@ -55,10 +58,7 @@ function content_641cdeb632b769_28634150 (Smarty_Internal_Template $_smarty_tpl)
                 <img class="image-4-icon" src="public\logo\aproposimage1.png" />
             </div>
         </div>
-         <header>
-            <?php $_smarty_tpl->_subTemplateRender("file:src/view/templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-        </header>
+        
         <div class="education">
             <div class="education-child"></div>
             <img class="right-icon" src="public\logo\aproposimage2.png" />
@@ -88,6 +88,10 @@ function content_641cdeb632b769_28634150 (Smarty_Internal_Template $_smarty_tpl)
                 </div>
             </div>
         </div>
+        <header>
+                <?php $_smarty_tpl->_subTemplateRender("file:src/view/templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+        </header>
         <div class="skills">
             <div class="left1">
                 <div class="envie-den-savoir">Envie d’en savoir plus ?</div>

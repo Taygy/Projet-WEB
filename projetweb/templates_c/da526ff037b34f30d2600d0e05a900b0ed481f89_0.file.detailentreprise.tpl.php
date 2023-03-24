@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-03-23 19:36:23
+/* Smarty version 4.3.0, created on 2023-03-24 10:09:13
   from 'C:\wamp64\www\Formulaire\FormulairePOST\projetweb\src\view\templates\detailentreprise.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_641caa377d3239_99124632',
+  'unifunc' => 'content_641d76c9535113_13885578',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'da526ff037b34f30d2600d0e05a900b0ed481f89' => 
     array (
       0 => 'C:\\wamp64\\www\\Formulaire\\FormulairePOST\\projetweb\\src\\view\\templates\\detailentreprise.tpl',
-      1 => 1679600181,
+      1 => 1679650909,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_641caa377d3239_99124632 (Smarty_Internal_Template $_smarty_tpl) {
+function content_641d76c9535113_13885578 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -36,7 +36,7 @@ function content_641caa377d3239_99124632 (Smarty_Internal_Template $_smarty_tpl)
 
     <div class="news">
         <p>
-            <img src="<?php echo $_smarty_tpl->tpl_vars['entreprise']->value[0]->lien_logo;?>
+            <img src="<?php echo $_smarty_tpl->tpl_vars['entreprise']->value[0]->logo;?>
 ">
             <br>
             <?php echo $_smarty_tpl->tpl_vars['entreprise']->value[0]->nom;?>
@@ -60,6 +60,10 @@ function content_641caa377d3239_99124632 (Smarty_Internal_Template $_smarty_tpl)
         </form>
         <p><a href="index.php?action=ajouteroffre&id=<?php echo $_smarty_tpl->tpl_vars['entreprise']->value[0]->id_entreprise;?>
 ">Vous voulez ajouter une offre ?</a></p>
+        <p><a href="index.php?action=modifierentreprise&id=<?php echo $_smarty_tpl->tpl_vars['entreprise']->value[0]->id_entreprise;?>
+">Vous voulez modifiez cette entreprise ?</a></p>
+        <p><a href="index.php?action=deleteentreprise&id=<?php echo $_smarty_tpl->tpl_vars['entreprise']->value[0]->id_entreprise;?>
+">Supprimer cette entreprise ?</a></p>
         
     </div>
 </body>

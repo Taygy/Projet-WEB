@@ -25,15 +25,24 @@ function getOffre($identifier)
 	return $offre;
 }
 
-function getAdresseIdByEntrepriseId(int $id_entreprise)
+function getIdAdresseByEntreprise(int $id_entreprise)
 {
 	$database = dbConnect();
 	$statement = $database->prepare(
-		'SELECT id_adresse FROM entreprise WHERE id_entreprise = ?'
+		"SELECT a.id_adresse
+        FROM adresse AS a
+        JOIN localise_entreprise AS le ON a.id_adresse = le.id_adresse
+        JOIN entreprise AS e ON le.id_entreprise = e.id_entreprise
+        WHERE e.id_entreprise = ?;"
 	);
 	$statement->execute([$id_entreprise]);
 	$result = $statement->fetch(PDO::FETCH_ASSOC);
-	return $result ? intval($result['id_adresse']) : 0;
+
+	if ($result) {
+		return $result['id_adresse'];
+	}
+
+	return null;
 }
 
 function getEntreprises()
