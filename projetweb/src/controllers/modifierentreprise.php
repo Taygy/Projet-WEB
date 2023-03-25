@@ -6,14 +6,13 @@ require_once('src/modele/model.php');
 
 function changeEntreprise(array $input, string $identifier)
 {
-
+    $entreprise = getEntreprise($identifier);
     require('src/view/modifierentreprise.php');
     // Vérifier que les données du formulaire sont valides
     if (!empty($input['nom']) && !empty($input['description_entreprise']) && !empty($input['secteur']) && !empty($input['mail']) && !empty($input['confiance']) && !empty($input['nombre_employes']) && !empty($input['logo']) && !empty($input['ville']) && !empty($input['code_postal']) && !empty($input['adresse_complete'])) {
 
         // Appeler la fonction modifEntreprise avec les paramètres fournis
         $success = modifEntreprise(
-            $identifier,
             $input['nom'],
             $input['description_entreprise'],
             $input['secteur'],
@@ -21,9 +20,10 @@ function changeEntreprise(array $input, string $identifier)
             $input['confiance'],
             $input['nombre_employes'],
             $input['logo'],
-            1 // Visible
+            1,
+            $identifier
         );
-
+        
         if (!$success) {
             die('Impossible de modifier l\'entreprise !');
         } else {

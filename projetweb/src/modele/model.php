@@ -182,7 +182,7 @@ function modifEntreprise(int $id_entreprise, string $nom, string $description_en
 {
 	$database = dbConnect();
 	$statement = $database->prepare(
-		'UPDATE entreprise SET nom = ?, description_entreprise = ?, secteur = ?, mail = ?, confiance = ?, nombre_employes = ?, logo = ?, visible = ?  WHERE id_entreprise = ?'
+		'UPDATE entreprise SET nom = ?, description_entreprise = ?, secteur = ?, mail = ?, confiance = ?, nombre_employes = ?, lien_logo = ?, visible = ?  WHERE id_entreprise = ?'
 	);
 	$affectedLines = $statement->execute([$nom, $description_entreprise, $secteur, $mail, $confiance, $nombre_employes, $logo, $visible, $id_entreprise]);
 	return ($affectedLines > 0);
@@ -217,9 +217,6 @@ function localiseEntreprise(int $id_adresse, int $id_entreprise)
 
 
 
-
-
-
 function createComment(string $commentaire, string $note, string $id_membre, string $id_entreprise)
 {
 	$database = dbConnect();
@@ -236,7 +233,7 @@ function createComment(string $commentaire, string $note, string $id_membre, str
 function dbConnect()
 {
 	try {
-		$database = new PDO('mysql:host=localhost;dbname=livrable3;charset=utf8', 'root', 'Toto003300');
+		$database = new PDO('mysql:host=localhost;dbname=livrable3;charset=utf8', 'root', '');
 		$database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		return $database;
 	} catch (PDOException $e) {
