@@ -182,7 +182,7 @@ function modifEntreprise(int $id_entreprise, string $nom, string $description_en
 {
 	$database = dbConnect();
 	$statement = $database->prepare(
-		'UPDATE entreprise SET nom = ?, description_entreprise = ?, secteur = ?, mail = ?, confiance = ?, nombre_employes = ?, lien_logo = ?, visible = ?  WHERE id_entreprise = ?'
+		'UPDATE entreprise SET nom = ?, description_entreprise = ?, secteur = ?, mail = ?, confiance = ?, nombre_employes = ?, logo = ?, visible = ?  WHERE id_entreprise = ?'
 	);
 	$affectedLines = $statement->execute([$nom, $description_entreprise, $secteur, $mail, $confiance, $nombre_employes, $logo, $visible, $id_entreprise]);
 	return ($affectedLines > 0);
@@ -197,7 +197,7 @@ SET ville = ?, code_postal = ?, adresse_complete = ?
 WHERE adresse.id_adresse IN (
     SELECT localise_entreprise.id_adresse
     FROM localise_entreprise
-    WHERE localise_entreprise.id_entreprise = ?'
+    WHERE localise_entreprise.id_entreprise = ?)'
 
 	);
 	$affectedLines = $statement->execute([$ville, $code_postal, $adresse_complete, $identifier]);
@@ -208,7 +208,7 @@ function localiseEntreprise(int $id_adresse, int $id_entreprise)
 {
 	$database = dbConnect();
 	$statement = $database->prepare(
-		'UPDATE localise_entreprise SET id_adresse = ? WHERE id_adresse = ?'
+		'UPDATE localise_entreprise SET id_entreprise= ?,  id_adresse = ? WHERE id_adresse = ?'
 	);
 	$affectedLines = $statement->execute([$id_adresse, $id_entreprise]);
 	return ($affectedLines > 0);
@@ -233,7 +233,7 @@ function createComment(string $commentaire, string $note, string $id_membre, str
 function dbConnect()
 {
 	try {
-		$database = new PDO('mysql:host=localhost;dbname=livrable3;charset=utf8', 'root', '');
+		$database = new PDO('mysql:host=localhost;dbname=livrable3;charset=utf8', 'root', 'Toto003300');
 		$database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		return $database;
 	} catch (PDOException $e) {

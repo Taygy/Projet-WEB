@@ -13,6 +13,7 @@ function changeEntreprise(array $input, string $identifier)
 
         // Appeler la fonction modifEntreprise avec les paramètres fournis
         $success = modifEntreprise(
+            $identifier,
             $input['nom'],
             $input['description_entreprise'],
             $input['secteur'],
@@ -20,18 +21,20 @@ function changeEntreprise(array $input, string $identifier)
             $input['confiance'],
             $input['nombre_employes'],
             $input['logo'],
-            1,
-            $identifier
+            1
+
         );
-        
+
         if (!$success) {
             die('Impossible de modifier l\'entreprise !');
         } else {
             $success2 = modifAdresse(
+
                 $input['ville'],
                 $input['code_postal'],
                 $input['adresse_complete'],
                 $identifier
+
             );
 
             if (!$success2) {
