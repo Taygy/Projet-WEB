@@ -9,6 +9,7 @@ require_once('src/controllers/ajouterentreprise.php');
 require_once('src/controllers/ajouteroffre.php');
 require_once('src/controllers/modifierentreprise.php');
 require_once('src/controllers/apropos.php');
+require_once('src/controllers/supprimerentreprise.php');
 
 
 if (isset($_GET['action']) && $_GET['action'] !== '') {
@@ -43,8 +44,6 @@ if (isset($_GET['action']) && $_GET['action'] !== '') {
         }
     } elseif ($_GET['action'] === 'ajouterentreprise') {
         addEntreprise($_POST);
-    } elseif ($_GET['action'] === 'deleteentreprise') {
-        deleteEntreprise($_POST);
     } elseif ($_GET['action'] === 'homepage') {
         homepage();
     } elseif ($_GET['action'] === 'apropos') {
@@ -54,6 +53,16 @@ if (isset($_GET['action']) && $_GET['action'] !== '') {
             $identifier = $_GET['id'];
 
             changeEntreprise($_POST, $identifier);
+        } else {
+            echo 'Erreur : CDE aucun identifiant de billet envoyé';
+
+            die;
+        }
+    } elseif ($_GET['action'] === 'deleteentreprise') {
+        if (isset($_GET['id']) && $_GET['id'] > 0) {
+            $identifier = $_GET['id'];
+
+            deleteEntreprise($identifier);
         } else {
             echo 'Erreur : CDE aucun identifiant de billet envoyé';
 
