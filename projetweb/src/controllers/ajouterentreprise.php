@@ -1,3 +1,5 @@
+
+
 <?php
 
 require_once('src/modele/model.php');
@@ -9,7 +11,7 @@ function addEntreprise(array $input)
     // Vérifier que les données du formulaire sont valides
     if (!empty($input['nom']) && !empty($input['description_entreprise']) && !empty($input['secteur']) && !empty($input['mail']) && !empty($input['confiance']) && !empty($input['nombre_employes']) && !empty($input['logo']) && !empty($input['ville']) && !empty($input['code_postal']) && !empty($input['adresse_complete'])) {
         // Appeler la fonction createEntreprise avec les paramètres fournis
-        $success = createEntreprise(
+        $id_entreprise = createEntreprise(
             $input['nom'],
             $input['description_entreprise'],
             $input['secteur'],
@@ -20,18 +22,24 @@ function addEntreprise(array $input)
             1 // Visible
         );
 
-        if (!$success) {
+        if (!$id_entreprise) {
             die('Impossible d\'ajouter l\'entreprise !');
         } else {
-            $success2 = addAdresse(
+            $id_adresse = addAdresse(
                 $input['ville'],
                 $input['code_postal'],
                 $input['adresse_complete']
             );
-            if (!$success2) {
+            if (!$id_adresse) {
                 die('Impossible d\'ajouter l\'adresse !');
             } else {
-                header('Location: index.php?action=ajouterentreprise');
+                $success3 = createlocaliseEntreprise($id_adresse, $id_entreprise);
+
+                if (!$success3) {
+                    die('Impossible de créer la relation entre l\'adresse et l\'entreprise !');
+                } else {
+                    header('Location: index.php?action=ajouterentreprise');
+                }
             }
         }
     } else {

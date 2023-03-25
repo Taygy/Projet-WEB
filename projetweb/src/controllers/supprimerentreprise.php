@@ -2,32 +2,23 @@
 
 require_once('src/modele/model.php');
 
-
-function deleteEntreprise(array $input)
+function deleteEntreprise(string $identifier)
 {
-    // Vérifier que l'id_entreprise est fourni
-    if (!empty($input['id_entreprise'])) {
-        // Récupérer l'id_entreprise
-        $id_entreprise = $input['id_entreprise'];
+    $success1 = supprimerAdresse($identifier);
 
-        // Récupérer l'id_adresse associé à l'id_entreprise
-        $id_adresse = getIdAdresseByEntreprise($id_entreprise);
-
-        if ($id_adresse === null) {
-            die('Impossible de trouver l\'adresse associée à l\'entreprise !');
-        }
-
-        // Supprimer l'entreprise et l'adresse
-        $deleteEntrepriseSuccess = deleteEntreprise($id_entreprise);
-        $deleteAdresseSuccess = deleteAdresse($id_adresse);
-
-        // Vérifier si les suppressions ont réussi
-        if ($deleteEntrepriseSuccess && $deleteAdresseSuccess) {
-            return true;
-        } else {
-            die('Impossible de supprimer l\'entreprise ou l\'adresse associée !');
-        }
+    if (!$success1) {
+        die('Impossible de modifier l\'entreprise !');
     } else {
-        die('L\'id_entreprise n\'est pas fourni !');
+        $success2 = supprimerLocalisationEntreprise($identifier);
+        if (!$success2) {
+            die('Impossible de modifier l\'entreprise !');
+        } else {
+            $success3 = supprimerEntreprise($identifier);
+            if (!$success3) {
+                die('Impossible de modifier l\'entreprise !');
+            }
+        }
     }
+    echo ('Il manque l\'identifiant de l\'entreprise');
+    return;
 }

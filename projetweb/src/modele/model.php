@@ -102,7 +102,11 @@ function createEntreprise(string $nom, string $description_entreprise, string $s
 		'INSERT INTO entreprise(nom, description_entreprise, secteur, mail, confiance, nombre_employes, logo, visible) VALUES(?, ?, ?, ?, ?, ?, ?, ?)'
 	);
 	$affectedLines = $statement->execute([$nom, $description_entreprise, $secteur, $mail, $confiance, $nombre_employes, $logo, $visible]);
-	return ($affectedLines > 0);
+	if ($affectedLines) {
+		return $database->lastInsertId();
+	} else {
+		return false;
+	}
 }
 
 function addAdresse(string $ville, string $code_postal, string $adresse_complete)
@@ -112,9 +116,23 @@ function addAdresse(string $ville, string $code_postal, string $adresse_complete
 		'INSERT INTO adresse(ville, code_postal, adresse_complete) VALUES(?, ?, ?)'
 	);
 	$affectedLines = $statement->execute([$ville, $code_postal, $adresse_complete]);
-	return ($affectedLines > 0);
+	if ($affectedLines) {
+		return $database->lastInsertId();
+	} else {
+		return false;
+	}
 }
 
+function createlocaliseEntreprise(int $id_adresse, int $id_entreprise)
+{
+	$database = dbConnect();
+	$statement = $database->prepare(
+		'INSERT INTO localise_entreprise( id_adresse, id_entreprise) VALUES (?,?)'
+	);
+	$affectedLines = $statement->execute([$id_adresse, $id_entreprise]);
+
+	return ($affectedLines > 0);
+}
 
 function createOffre(string $id_entreprise, string $titre, string $duree, string $remuneration, string $description_offre, string $nombre_places)
 {
@@ -138,41 +156,33 @@ function addCompetence(string $id_competence)
 
 //LISTE DES FONCTIONS DELETE 
 
-function delete_entreprise()
+function supprimerEntreprise(int $id_entreprise)
 {
-	// Récupérer l'id_entreprise
-	$id_entreprise = $_POST['id_entreprise'];
-
-	// Récupérer les adresses associées à l'entreprise
 	$database = dbConnect();
-	$statement = $database->prepare("SELECT id_adresse FROM localise_entreprise WHERE id_entreprise = ?");
-	$statement->execute([$id_entreprise]);
-	$result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-	// Supprimer les adresses associées à l'entreprise
-	if (count($result) === 1) {
-		deleteAdresse($result[0]['id_adresse']);
-	} elseif (count($result) > 1) {
-		foreach ($result as $address) {
-			deleteAdresse($address['id_adresse']);
-		}
-	}
-
-	// Supprimer l'entreprise
-	$statement_entreprise = $database->prepare("DELETE FROM entreprise WHERE id_entreprise = ?");
-	$affectedLines = $statement_entreprise->execute([$id_entreprise]);
-
+	$statement = $database->prepare('DELETE FROM entreprise WHERE id_entreprise = ?');
+	$affectedLines = $statement->execute([$id_entreprise]);
 	return ($affectedLines > 0);
 }
 
-
-function deleteAdresse(int $id_adresse)
+function supprimerAdresse(int $id_adresse)
 {
 	$database = dbConnect();
 	$statement = $database->prepare(
-		'DELETE FROM adresse WHERE id_adresse = ?'
+		'DELETE FROM adresse
+        WHERE adresse.id_adresse IN (
+            SELECT localise_entreprise.id_adresse
+            FROM localise_entreprise
+            WHERE localise_entreprise.id_entreprise = ?)'
 	);
 	$affectedLines = $statement->execute([$id_adresse]);
+	return ($affectedLines > 0);
+}
+
+function supprimerLocalisationEntreprise(int $id_entreprise)
+{
+	$database = dbConnect();
+	$statement = $database->prepare('DELETE FROM localise_entreprise WHERE id_entreprise = ?');
+	$affectedLines = $statement->execute([$id_entreprise]);
 	return ($affectedLines > 0);
 }
 
@@ -208,7 +218,7 @@ function localiseEntreprise(int $id_adresse, int $id_entreprise)
 {
 	$database = dbConnect();
 	$statement = $database->prepare(
-		'UPDATE localise_entreprise SET id_entreprise= ?,  id_adresse = ? WHERE id_adresse = ?'
+		'UPDATE localise_entreprise SET id_adresse= ?,  id_entreprise = ? WHERE id_adresse = ?'
 	);
 	$affectedLines = $statement->execute([$id_adresse, $id_entreprise]);
 	return ($affectedLines > 0);
