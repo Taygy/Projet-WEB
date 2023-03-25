@@ -3,8 +3,8 @@
 
 require_once('src/modele/model.php');
 
-function homepage()
+function apropos()
 {
 
-	require('src/view/homepage.php');
+    require('src/view/apropos.php');
 }

@@ -33,19 +33,20 @@
                 </form>
         </div>
     </div>
-    <div class="gigabox">
-        <div class="box">
-            {foreach $offres as $offre}
+    {foreach $offres as $offre}
+        <div class="gigabox">
+            <div class="box">
                 <h4>{$offre->nom}</h4>
                 <img src="{$offre->lien_logo}" class="cap">
                 <h1>{$offre->titre}</h1>
                 <p>{$offre->description_offre} pour une durée de : <em>{$offre->duree}</em></p>
                 <em><a href="index.php?action=detailoffre&id={$offre->id_offre|urlencode}">Détails</a></em>
                 </p>
-                </div>
-            {/foreach}
+            </div>
         </div>
-    </div>
-    {include file='src/view/templates/footer.tpl'}
+    {/foreach}       
+    <footer>
+        {include file='src/view/templates/footer.tpl'}
+    </footer>
 </body>
 </html>

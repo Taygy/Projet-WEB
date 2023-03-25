@@ -23,11 +23,11 @@ function addComment(string $post, array $input)
     }
 }
 function createComment(string $post, string $author, string $comment): bool
-    {
-        $statement = $this->connection->getConnection()->prepare(
-            'INSERT INTO comments(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())'
-        );
-        $affectedLines = $statement->execute([$post, $author, $comment]);
+{
+    $statement = $this->connection->getConnection()->prepare(
+        'INSERT INTO comments(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())'
+    );
+    $affectedLines = $statement->execute([$post, $author, $comment]);
 
-        return ($affectedLines > 0);
-    }
+    return ($affectedLines > 0);
+}

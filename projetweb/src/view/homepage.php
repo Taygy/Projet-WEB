@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html>
-	<head>
-    	<meta charset="utf-8" />
-    	<title>Offre de stage</title>
-    	<link href="style.css" rel="stylesheet" />
-	</head>
+<?php
 
-	<body>
-    	<h1>Bienvenue sur notre site !</h1>
-    	<p>Bla bla bla</p>
-        <a href="index.php?action=offre">Liste des offres</a>
-        <a href="index.php?action=entreprise">Liste des entreprises</a>
-	</body>
-</html>
+require('./lib/smarty-4.2.1/libs/Smarty.class.php');
+$smarty = new Smarty();
+$smarty->template_dir = './app/view/templates';
+
+
+$smarty->display('src/view/templates/homepage.tpl');

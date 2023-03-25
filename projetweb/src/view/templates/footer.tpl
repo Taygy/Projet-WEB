@@ -20,17 +20,17 @@
                     <h3>Etudiant</h3>
                     <ul>
                         <li><a href="#">Chercher une offre</a></li>
-                        <li><a href="#">Découvrir les entreprises</a></li>
+                        <li><a href="index.php?action=entreprise">Decouvrir des entreprises</a></li>
                     </ul>
                 </div>
                 <div class="col-trouvez-nous">
                     <h3>Trouvez-nous sur</h3>
-                    <img class="insta" src="public/img/instaa.png" />
-                    <img class="twitter" src="public/img/twitter.png" />
-                    <img class="fb" src="public/img/fb.png" />
+                    <img class="insta" src="public\logo\instaa.png" />
+                    <img class="twitter" src="public\logo\twitter.png" />
+                    <img class="fb" src="public\logo\fb.png" />
                 </div>
             </div>
-            <img src="public/img/logoce.png" alt="Logo de CESI" class="my-image1">
+            <img src="public\logo\logoce.png" alt="Logo de CESI" class="my-image1">
             <p class="copyright">CESI © 2023</p>
         </footer>
     </div>
