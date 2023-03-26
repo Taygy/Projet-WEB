@@ -10,6 +10,8 @@ require_once('src/controllers/ajouteroffre.php');
 require_once('src/controllers/modifierentreprise.php');
 require_once('src/controllers/apropos.php');
 require_once('src/controllers/supprimerentreprise.php');
+require_once('src/controllers/modifieroffre.php');
+
 
 
 if (isset($_GET['action']) && $_GET['action'] !== '') {
@@ -70,12 +72,19 @@ if (isset($_GET['action']) && $_GET['action'] !== '') {
         }
     } elseif ($_GET['action'] === 'ajouteroffre') {
         if (isset($_GET['id']) && $_GET['id'] > 0) {
+            $id_entreprise = $_GET['id'];
+            ajouterOffre($_POST, $id_entreprise);
+        } else {
+            echo 'Erreur : aucun identifiant d\'entreprise envoyé';
+            die;
+        }
+    } elseif ($_GET['action'] === 'modifieroffre') {
+        if (isset($_GET['id']) && $_GET['id'] > 0) {
             $identifier = $_GET['id'];
 
-            addOffre($_POST, $identifier);
+            changeOffre($_POST, $identifier);
         } else {
-            echo 'Erreur : aucun identifiant de billet envoyé';
-
+            echo 'Erreur : aucun identifiant d\'offre envoyé';
             die;
         }
     }
