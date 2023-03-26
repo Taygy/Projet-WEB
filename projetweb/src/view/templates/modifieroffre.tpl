@@ -6,7 +6,7 @@
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <link rel="stylesheet" href="public/css/global.css" />
     <link rel="stylesheet" href="public/css/creeroffre.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM Sans:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM_Sans:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rufina:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Salsa:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" />
@@ -52,7 +52,7 @@
                 </div>
                 <div>
                     <label class="competence1" for="competences">Compétence requises :</label>
-                    <input class="competence" type="text" id="competences" name="competences" required>
+                    <input class="competence" type="text" id="competence" name="id_competence" required>
                 </div>
                 <div>
                     <label class="nvscolaire" for="niveau_scolaire">Niveau scolaire visé :</label>

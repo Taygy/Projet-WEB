@@ -134,23 +134,45 @@ function createlocaliseEntreprise(int $id_adresse, int $id_entreprise)
 	return ($affectedLines > 0);
 }
 
-function createOffre(string $id_entreprise, string $titre, string $duree, string $remuneration, string $description_offre, string $nombre_places)
+
+function createOffre(string $titre, string $duree, string $remuneration, string $description_offre, string $nombre_places, int $id_entreprise)
 {
 	$database = dbConnect();
 	$statement = $database->prepare(
-		'INSERT INTO offre(id_entreprise,titre,duree,remuneration,description_offre,nombre_places) VALUES(?,?, ?, ?, ?, ?)'
+		'INSERT INTO offre(titre, duree, remuneration, description_offre, nombre_places, id_entreprise) VALUES(?, ?, ?, ?, ?, ?)'
 	);
-	$affectedLines = $statement->execute([$id_entreprise, $titre, $duree, $remuneration, $description_offre, $nombre_places]);
-	return ($affectedLines > 0);
+	$affectedLines = $statement->execute([$titre, $duree, $remuneration, $description_offre, $nombre_places, $id_entreprise]);
+	if ($affectedLines) {
+		return $database->lastInsertId();
+	} else {
+		return false;
+	}
 }
 
-function addCompetence(string $id_competence)
+
+function CreateCompetence(string $competence)
+{
+	$database = dbConnect();
+	$statement = $database->prepare('SELECT id_competence FROM competence WHERE competence = ?');
+	$statement->execute([$competence]);
+	$result = $statement->fetch();
+	if ($result) {
+		return $result['id_competence'];
+	} else {
+		$statement = $database->prepare('INSERT INTO competence(competence) VALUES (?)');
+		$statement->execute([$competence]);
+		return $database->lastInsertId();
+	}
+}
+
+function createCompetenceRequises(int $id_offre, int $id_competence)
 {
 	$database = dbConnect();
 	$statement = $database->prepare(
-		'INSERT INTO competence(id_competence) VALUES(?)'
+		'INSERT INTO competences_requises(id_offre, id_competence) VALUES (?, ?)'
 	);
-	$affectedLines = $statement->execute([$id_competence]);
+	$affectedLines = $statement->execute([$id_offre, $id_competence]);
+
 	return ($affectedLines > 0);
 }
 
@@ -226,7 +248,6 @@ function localiseEntreprise(int $id_adresse, int $id_entreprise)
 
 
 
-
 function createComment(string $commentaire, string $note, string $id_membre, string $id_entreprise)
 {
 	$database = dbConnect();
@@ -243,7 +264,7 @@ function createComment(string $commentaire, string $note, string $id_membre, str
 function dbConnect()
 {
 	try {
-		$database = new PDO('mysql:host=localhost;dbname=livrable3;charset=utf8', 'root', '');
+		$database = new PDO('mysql:host=localhost;dbname=livrable3;charset=utf8', 'root', 'Toto003300');
 		$database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		return $database;
 	} catch (PDOException $e) {
