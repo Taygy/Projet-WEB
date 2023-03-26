@@ -2,12 +2,12 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, width=device-width">
-    <link rel="stylesheet" href="public/css/global.css">
-    <link rel="stylesheet" href="public/css/apropos.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="public/css/global.css" />
+    <link rel="stylesheet" href="public/css/apropos.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rufina:wght@400&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM_Sans:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM Sans:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Salsa:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" />
 </head>
@@ -30,17 +30,17 @@
                     permet aux entreprises de trouver des stagiaires talentueux pour
                     leurs projets.
                 </div>
-                <img class="image-4-icon" src="public\logo\aproposimage1.png">
+                <img class="image-4-icon" src="public\logo\aproposimage1.png" />
             </div>
         </div>
         
         <div class="education">
             <div class="education-child"></div>
-            <img class="right-icon" src="public\logo\aproposimage2.png">
+            <img class="right-icon" src="public\logo\aproposimage2.png" />
             <div class="left">
                 <b class="plus-sur-nous">Plus sur nous</b>
                 <div class="notre-mission">Notre mission</div>
-                <img class="side-line-icon" src="public\logo\aproposimage3.png">
+                <img class="side-line-icon" src="public\logo\aproposimage3.png" />
                 <div class="faciliter-la-recherche">
                     Faciliter la recherche de stage
                 </div>
@@ -82,4 +82,3 @@
 </body>
 
 </html>
-

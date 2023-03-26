@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="public\css\global.css" />
     <link rel="stylesheet" href="public\css\creeroffre.css" />
     <link rel="stylesheet" href="public\css\header&footer.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM_Sans:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM Sans:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rufina:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Salsa:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" />
@@ -17,12 +17,15 @@
     <header>
         {include file="src/view/templates/header.tpl"}
     </header>
-
+    <br>
+    <br>
+    <br>
+    <br>
     <div class="crer-offre">
         <div class="vector-parent1">
             <img class="cadre" src="contact1.png" />
             <h1 class="grandtitre">Créer votre offre</h1>
-            <form id=MyForm action="index.php?action=ajouteroffre&id={$entreprise[0]->id_entreprise}" method="post">
+            <form id=MyForm action="index.php?action=ajouteroffre" method="post">
                 <label class="titre1" for="titre">Titre :</label>
                 <input class="titre" type="text" id="titre" name="titre" required>
                 <label class="durestage1" for="duree">Durée du stage :</label>

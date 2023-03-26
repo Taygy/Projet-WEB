@@ -44,7 +44,7 @@
             </div>
             <div class="en-savoir-plus">
                 <ul>
-                    <a href="#">En savoir plus sur l’entreprise</a>
+                    <a href="index.php?action=detailentreprise&id={$offre[0]->id_entreprise}">En savoir plus sur l’entreprise</a>
                 </ul>
             </div>
             </form>

@@ -19,35 +19,28 @@
            {include file="src/view/templates/header.tpl"}
         </header>
 
+        <h1>Login</h1>
         <div class="connexion1">Connexion</div>
-        <form id="MyForm" action="index.php?action=ajouteroffre" method="post">
+        <form id="MyForm" method="post">
             <div class="vector-parent">
                 <img class="support7" src="contact1.png" />
                 <div>
                     <label class="e-mail1" for="email-input">E-mail :</label>
-                    <input class="email" type="email" id="email-input" name="email-input" required>
+                    <input class="email" type="email" id="email-input" name="email" required>
                 </div>
                 <div>
                     <label class="mot-de-passe1" for="password-input">Mot de passe :</label>
-                    <input class="mdp" type="password" id="password-input" name="password-input" required>
+                    <input class="mdp" type="password" id="password-input" name="password" required>
                 </div>
             </div>
-            <input type="submit" value="Envoyer">
+            <button class="connexion2" type="submit">Connexion</button>
         </form>
-
-        <div class="contact-btn12">
-            <button class="connexion2">Connexion</button>
-        </div>
-        <div class="connectez">Connectez-vous</div>
-        <div class="textee">Vous n’avez pas de compte?</div>
-        <div class="contact-btn11">
-            <button class="sinscrire">S’inscrire</button>
-        </div>
     </div>
     <!--footer-->
-    <footer>
-    {include file="src/view/templates/footer.tpl"}
-    </footer>
+    <div class="footer-dark">
+        <footer>
+            {include file="src/view/templates/footer.tpl"}
+        </footer>
 </body>
 
 </html>

@@ -176,6 +176,13 @@ function createCompetenceRequises(int $id_offre, int $id_competence)
 	return ($affectedLines > 0);
 }
 
+
+function addUser(string $prenom, string $nom, string $email, string $password_hash){
+	$database = dbConnect();
+	$statement = $database->prepare('INSERT INTO membre (prenom, nom, mail, mdp_chiffre) VALUES(?, ?, ?, ?)');
+	$affectedLines = $statement->execute([$prenom, $nom, $email, $password_hash]);
+}
+
 //LISTE DES FONCTIONS DELETE 
 
 function supprimerEntreprise(int $id_entreprise)
@@ -259,12 +266,30 @@ function createComment(string $commentaire, string $note, string $id_membre, str
 	return ($affectedLines > 0);
 }
 
+//autres fonctions
+
+function setUser(string $sessiondata){
+	$database = dbConnect();
+	$query = $sessiondata;
+	$statement = $database->query("SELECT * FROM `membre`
+		WHERE `id_membre` = '$query';");
+	$user = $statement->fetchAll(PDO::FETCH_ASSOC);
+	return $user;
+}
+
+function verifMail(string $mail){
+	$database = dbConnect();
+    $query=$mail;
+    $statement = $database->query("SELECT * FROM membre WHERE `mail` = '$query'");
+    $user = $statement->fetchAll(PDO::FETCH_ASSOC);
+	return $user;
+}
 
 // Nouvelle fonction qui nous permet d'éviter de répéter du code
 function dbConnect()
 {
 	try {
-		$database = new PDO('mysql:host=localhost;dbname=livrable3;charset=utf8', 'root', 'Toto003300');
+		$database = new PDO('mysql:host=localhost;dbname=livrable3;charset=utf8', 'root', '');
 		$database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		return $database;
 	} catch (PDOException $e) {
