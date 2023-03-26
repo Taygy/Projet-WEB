@@ -10,6 +10,9 @@ require_once('src/controllers/ajouteroffre.php');
 require_once('src/controllers/modifierentreprise.php');
 require_once('src/controllers/apropos.php');
 require_once('src/controllers/supprimerentreprise.php');
+require_once('src/controllers/login.php');
+require_once('src/controllers/creeretudiant.php');
+require_once('src/controllers/logout.php');
 
 
 if (isset($_GET['action']) && $_GET['action'] !== '') {
@@ -76,7 +79,16 @@ if (isset($_GET['action']) && $_GET['action'] !== '') {
             echo 'Erreur : aucun identifiant d\'entreprise envoyé';
             die;
         }
+    } elseif ($_GET['action'] === 'creeretudiant') {
+        addEtudiant($_POST);
+    } elseif ($_GET['action'] === 'login') {
+        setSession();
+    } elseif ($_GET['action'] === 'logout') {
+        logOut();
     }
-} else {
+    }
+else {
     homepage();
 }
+
+    
