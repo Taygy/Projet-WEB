@@ -44,6 +44,8 @@ if (isset($_GET['action']) && $_GET['action'] !== '') {
         }
     } elseif ($_GET['action'] === 'ajouterentreprise') {
         addEntreprise($_POST);
+    } elseif ($_GET['action'] === 'homepage') {
+        homepage();
     } elseif ($_GET['action'] === 'apropos') {
         apropos();
     } elseif ($_GET['action'] === 'modifierentreprise') {
@@ -68,12 +70,10 @@ if (isset($_GET['action']) && $_GET['action'] !== '') {
         }
     } elseif ($_GET['action'] === 'ajouteroffre') {
         if (isset($_GET['id']) && $_GET['id'] > 0) {
-            $identifier = $_GET['id'];
-
-            addOffre($_POST, $identifier);
+            $id_entreprise = $_GET['id'];
+            ajouterOffre($_POST, $id_entreprise);
         } else {
-            echo 'Erreur : aucun identifiant de billet envoyé';
-
+            echo 'Erreur : aucun identifiant d\'entreprise envoyé';
             die;
         }
     }
