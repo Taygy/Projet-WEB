@@ -18,21 +18,21 @@
         <div class="boorder">
          <header>
         {include file="src/view/templates/header.tpl"}
-    </header>
+        </header>
            <form id="MyForm" action="index.php?action=detailoffre" method="post">
-            <img class="capge" src="public\logo\capgemini.png" />
+            <img class="capge" src="public\logo/{$offre[0]->logo}" />
             <b class="note">Note : </b>
             <div class="desc-entreprise">
                 {$offre[0]->description_entreprise}
             </div>
             <div>
             <img class="support" src="public\logo/contact1.png" />
-            
+            <div>
             <button class="option" > 
             <a href="index.php?action=supprimeroffre&id={$offre[0]->id_offre}">Supprimer</a>
             <button class="modif"> 
             <a href="index.php?action=modifieroffre&id={$offre[0]->id_offre}">Modifier</a>
-            
+            </div>
             </div>
             <div class="titre-offre">{$offre[0]->titre}</div>
             
