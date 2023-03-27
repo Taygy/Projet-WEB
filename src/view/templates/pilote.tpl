@@ -24,8 +24,9 @@
         <div class="gigabox">
             <div class="box">
                 <img src="public\logo/{$pilote->logo}" class="cap">
-                <div class="le_fameuxh1">{$pilote->nom}</div>
-                <p>{$pilote->description} 
+                <div class="le_fameuxh1">{$pilote->nom}  {$pilote->prenom}</div>
+                <p>{$pilote->centre} {$pilote->promotion} 
+                {$pilote->mail} 
                 </p>
             </div>
         </div>
