@@ -19,11 +19,12 @@
         {include file="src/view/templates/header.tpl"}
     </header>
      <div class="chercher-un-stage">
-        <div class="nboffresdispo">{$offres|@count} offres disponibles</div>
-        <button class="wish">Ma wishlist</button>
+        <div class="nboffresdispo">Ma wishlist</div>
 {foreach $offres as $offre}
         <div class="gigabox">
             <div class="box">
+             <button class="option" > 
+            <a href="index.php?action=supprimeroffre&id={$offre[0]->id_offre}">Supprimer</a>
                 <h4>{$offre->nom}</h4>
                 <img src="public\logo/{$offre->logo}" class="cap">
                 <div class="le_fameuxh1">{$offre->titre}</div>
