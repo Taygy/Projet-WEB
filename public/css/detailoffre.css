@@ -30,6 +30,10 @@
     font-family: var(--font-dm-sans);
 }
 
+.btn-ret a {
+    color: var(--color-white);
+}
+
 .btn-ret:hover {
     color: inherit;
     background-color: var(--color-gray-300);
@@ -60,6 +64,10 @@
     height: 60px;
 }
 
+.btn-pos a {
+    color: var(--color-white);
+}
+
 .btn-pos:hover {
     color: inherit;
     background-color: var(--color-gray-300);
@@ -87,6 +95,10 @@
     border-radius: var(--br-19xl);
     width: 196.35px;
     height: 60px;
+}
+
+.boutonsajout a {
+    color: var(--color-white);
 }
 
 .boutonsajout:hover {
@@ -334,12 +346,12 @@
 .option {
     position: absolute;
     top: 248px;
-    left: 1142px;
+    left: 1242px;
     border-radius: var(--br-xl);
     background-color: transparent;
     border: 3px solid var(--color-springgreen);
     box-sizing: border-box;
-    width: 263px;
+    width: 163px;
     height: 63px;
     color: var(--color-white);
     padding: 5px 15px;
@@ -352,6 +364,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.option a {
+    color: var(--color-white);
 }
 
 .option:hover {
@@ -361,15 +377,12 @@
 
 .modif {
     position: absolute;
-    top: 248px;
-    left: 1142px;
     border-radius: var(--br-xl);
     background-color: transparent;
     border: 3px solid var(--color-springgreen);
     box-sizing: border-box;
-    width: 263px;
+    width: 163px;
     height: 63px;
-    color: var(--color-white);
     padding: 5px 15px;
     cursor: pointer;
     transition: color 0.5s, background-color 0.5s;
@@ -380,6 +393,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    top: 248px;
+    left: 600px;
+}
+
+.modif a {
+    color: var(--color-white);
+}
+
+.modif:hover {
+    color: inherit;
+    background-color: var(--color-springgreen);
 }
 
 .capge {
