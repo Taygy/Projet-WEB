@@ -11,7 +11,7 @@
 
     <h1>Signup</h1>
 
-    <form action="routeur.php?action=creeretudiant" method="post" id="signup" novalidate>
+    <form action="index.php?action=creeretudiant" method="post" id="signup" novalidate>
         <div>
             <label for="prenom">Prenom</label>
             <input type="text" id="prenom" name="prenom">

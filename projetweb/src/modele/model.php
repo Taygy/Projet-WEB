@@ -176,11 +176,58 @@ function createCompetenceRequises(int $id_offre, int $id_competence)
 	return ($affectedLines > 0);
 }
 
+function createEtudiant(string $nom, string $prenom, string $promotion, string $centre, string $email, string $password_hash, string $id_adresse)
+{
+    $database = dbConnect();
 
-function addUser(string $prenom, string $nom, string $email, string $password_hash){
-	$database = dbConnect();
-	$statement = $database->prepare('INSERT INTO membre (prenom, nom, mail, mdp_chiffre) VALUES(?, ?, ?, ?)');
-	$affectedLines = $statement->execute([$prenom, $nom, $email, $password_hash]);
+    // Vérifier si le centre existe déjà dans la table "ecole"
+    $statement = $database->prepare('SELECT id_ecole FROM ecole WHERE centre = ?');
+    $statement->execute([$centre]);
+    $result = $statement->fetch();
+
+    if ($result) {
+        // Le centre existe déjà, on récupère son ID école
+        $id_ecole = $result['id_ecole'];
+    } else {
+        // Le centre n'existe pas, on l'ajoute à la table "ecole"
+        $statement = $database->prepare('INSERT INTO ecole(centre) VALUES (?)');
+        $statement->execute([$centre]);
+        $id_ecole = $database->lastInsertId();
+    }
+
+    // Ajouter le membre étudiant à la table "membre"
+    $statement1 = $database->prepare('INSERT INTO membre (prenom, nom, mail, mdp_chiffre, etudiant, id_adresse) VALUES(?, ?, ?, ?, ?, ?)');
+	$affectedLines = $statement1->execute([$prenom, $nom, $email, $password_hash, 1, $id_adresse]);
+    $id_membre = $database->lastInsertId();
+
+    // Ajouter la liaison entre le membre et l'école dans la table "etudie"
+    $statement2 = $database->prepare('INSERT INTO etudie(id_membre, id_ecole, promotion) VALUES (?, ?, ?)');
+    $statement2->execute([$id_membre, $id_ecole, $promotion]);
+
+    return ($id_membre);
+}
+
+function createCompetenceAcquise(string $competence, string $id_membre)
+{
+    $database = dbConnect();
+    $statement = $database->prepare('SELECT id_competence FROM competence WHERE competence = ?');
+    $statement->execute([$competence]);
+    $result = $statement->fetch();
+
+    if ($result) {
+        $statement = $database->prepare('INSERT INTO competences_acquises(id_competence, id_membre) VALUES (?, ?)');
+		$statement->execute([$result['id_competence'], $id_membre]);
+        return true;
+    } else {
+        // La compétence n'existe pas encore, on l'ajoute à la table "competence"
+        $statement = $database->prepare('INSERT INTO competence(competence) VALUES (?)');
+        $statement->execute([$competence]);
+		$id_competence = $database->lastInsertId();
+		$statement1 = $database->prepare('INSERT INTO competences_acquises(id_competence, id_membre) VALUES (?, ?)');
+        $statement1->execute([$id_competence], $id_membre);
+        return true;
+    }
+	
 }
 
 //LISTE DES FONCTIONS DELETE 

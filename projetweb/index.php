@@ -85,6 +85,8 @@ if (isset($_GET['action']) && $_GET['action'] !== '') {
         setSession();
     } elseif ($_GET['action'] === 'logout') {
         logOut();
+    } elseif ($_GET['action'] === 'creeretudiant') {
+        addEtudiant($_POST);
     }
     }
 else {
