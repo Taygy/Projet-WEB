@@ -19,23 +19,23 @@
         {include file="src/view/templates/header.tpl"}
     </header>
      <div class="chercher-un-stage">
-        <div class="nboffresdispo">{$offres|@count} offres disponibles</div>
-        <button class="wish">Ma wishlist</button>
-{foreach $offres as $offre}
-        <div class="gigabox">
-            <div class="box">
-                <h4>{$offre->nom}</h4>
-                <img src="public\logo/{$offre->logo}" class="cap">
-                <div class="le_fameuxh1">{$offre->titre}</div>
-                <p>{$offre->description_offre} pour une durée de : <em>{$offre->duree}</em></p>
-                <em class="det"><a class="ho" href="index.php?action=detailoffre&id={$offre->id_offre}">Détails</a></em>  
-            </div>
-        </div>
-{/foreach}
-		
-        </div>
-        <footer>
-    {include file="src/view/templates/footer.tpl"}
+        <div class="nboffresdispo">Ma wishlist</div>
+        {foreach $wishlists as $wishlist}
+                <div class="gigabox">
+                    <div class="box">
+                        <button class="option" > <a href="index.php?action=deletewishlist&id={$wishlist->id_offre}">Supprimer</a></button>
+                        <h4>{$wishlist->nom}</h4>
+                        <img src="public\logo/{$wishlist->logo}" class="cap">
+                        <div class="le_fameuxh1">{$wishlist->titre}</div>
+                        <p>{$wishlist->description_offre} pour une durée de : <em>{$wishlist->duree}</em></p>
+                        <em><a href="index.php?action=detailoffre&id={$wishlist->id_offre}">Détails</a></em>
+                        </p>
+                    </div>
+                </div>
+        {/foreach}
+    </div>
+    <footer>
+        {include file="src/view/templates/footer.tpl"}
     </footer>
 </body>
 

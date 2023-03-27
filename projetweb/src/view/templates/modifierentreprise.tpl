@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="public/css/creerentreprise.css" />
     <link rel="stylesheet" href="public/css/contact.css" />
     <link rel="stylesheet" href="public/css/header&footer.css" />
+    <link rel="stylesheet" href="public/ajaxCodePostal.js" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rufina:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM_Sans:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Salsa:wght@400&display=swap" />
@@ -97,6 +98,8 @@
     <footer>
         {include file="src/view/templates/footer.tpl"}
     </footer>
+
+    <script src="public/ajaxCodePostal"></script>
 </body>
 
 </html>

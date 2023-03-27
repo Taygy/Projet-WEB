@@ -14,6 +14,13 @@ require_once('src/controllers/login.php');
 require_once('src/controllers/creeretudiant.php');
 require_once('src/controllers/logout.php');
 require_once('src/controllers/modifieroffre.php');
+require_once('src/controllers/ajouterwishlist.php');
+require_once('src/controllers/mawishlist.php');
+require_once('src/controllers/deletewishlist.php');
+require_once('src/controllers/supprimeroffre.php');
+require_once('src/controllers/contact.php');
+
+
 
 
 if (isset($_GET['action']) && $_GET['action'] !== '') {
@@ -89,13 +96,38 @@ if (isset($_GET['action']) && $_GET['action'] !== '') {
             echo 'Erreur : aucun identifiant d\'offre envoyé';
             die;
         }
+    } elseif ($_GET['action'] === 'deletewishlist') {
+        if (isset($_GET['id']) && $_GET['id'] > 0) {
+            deleteWishlist($_GET['id']);
+        } else {
+            echo 'Erreur : aucun identifiant d\'offre envoyé';
+            die;
+        }
+    } elseif ($_GET['action'] === 'supprimeroffre') {
+        if (isset($_GET['id']) && $_GET['id'] > 0) {
+            deleteOffre($_GET['id']);
+        } else {
+            echo 'Erreur : aucun identifiant d\'offre envoyé';
+            die;
+        }
+    } elseif ($_GET['action'] === 'ajouterwishlist') {
+        if (isset($_GET['id']) && $_GET['id'] > 0) {
+            ajouterWishlist($_GET['id']);
+        } else {
+            echo 'Erreur : aucun identifiant d\'offre envoyé';
+            die;
+        }
     } elseif ($_GET['action'] === 'creeretudiant') {
         addEtudiant($_POST);
     } elseif ($_GET['action'] === 'login') {
         setSession();
     } elseif ($_GET['action'] === 'logout') {
         logOut();
-    } else {
-        homepage();
+    } elseif ($_GET['action'] === 'mawishlist') {
+        mawishlist();
+    } elseif ($_GET['action'] === 'contact') {
+        mecontact();
     }
+} else {
+    homepage();
 }

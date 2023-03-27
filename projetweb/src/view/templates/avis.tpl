@@ -6,8 +6,9 @@
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <link rel="stylesheet" href="public/css/global.css" />
     <link rel="stylesheet" href="public/css/contact.css" />
+    <link rel="stylesheet" href="public/css/header&footer.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rufina:wght@400&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM_Sans:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM Sans:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Salsa:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" />
 </head>
@@ -18,13 +19,11 @@
         <header>
            {include file="src/view/templates/header.tpl"}
         </header>
+        <img class="contact-child" src="public\logo/contact1.png" />
         <form id="MyForm" action="" method="post">
             <div>
-                <img class="contact-child" src="contact1.png" />
-            </div>
-            <div>
-                <label class="e-mail4" for="email-input">E-mail :</label>
-                <input class="e-mail" type="email" id="email-input" name="email-input" required>
+                <label class="e-mail4" for="mail-input">E-mail :</label>
+                <input class="e-mail" type="text" id="mail-input" name="mail-input" required>
             </div>
             <div>
                 <label class="prnom3" for="prenom-input">Prénom :</label>
@@ -35,22 +34,25 @@
                 <input class="nom" type="text" id="nom-input" name="nom-input" required>
             </div>
             <div>
-                <label class="objet">Objet :</label>
-                <select class="objet-1" name="objet-1" required>
-                    <option value="probléme">Problème</option>
-                    <option value="question">Question</option>
-                    <option value="autre">Autres</option>
+                <label class="objet">Note :</label>
+                <select class="objet-1" name="objet-1">
+                    <option value="probléme">0/5</option>
+                    <option value="probléme">1/5</option>
+                    <option value="question">2/5</option>
+                    <option value="autre">3/5</option>
+                    <option value="probléme">4/5</option>
+                    <option value="probléme">5/5</option>
                 </select>
             </div>
             <div>
-                <label class="votre-message" for="message-input">Votre message</label>
-                <textarea class="msg" id="message-input" name="message-input" required></textarea>
-            </div>
-            <div class="contactbtn">
-                <button type="submit" class="contact-btn">Contacter</button>
+                <label class="votre-message" for="comment-input">Commentaire</label>
+                <input class="msg" type="text" id="comment-input" name="comment-input">
             </div>
         </form>
-        <div class="titre2">Nous contacter</div>
+        <div class="contactbtn">
+            <button class="contact-btn">Contacter</button>
+        </div>
+        <div class="titre2">Donnez votre avis</div>
         <div class="media">Trouvez nous sur</div>
         <div class="texte">
             N'hésitez pas à nous contacter pour toute question ou demande
@@ -62,7 +64,7 @@
         <img class="fb-1-icon11" src="public\logo/fb.png" />
     </div>
     <!--footer-->
-    <footer>
+   <footer>
     {include file="src/view/templates/footer.tpl"}
     </footer>
 </body>

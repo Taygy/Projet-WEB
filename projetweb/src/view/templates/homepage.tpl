@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <link rel="stylesheet" href="public/css/global.css"/>
-    <link rel="stylesheet" href="public/css/index.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rufina:wght@400&display=swap"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM_Sans:wght@400;500;700&display=swap"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Salsa:wght@400&display=swap"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"/>
+    <link rel="stylesheet" href="public/css/global.css" />
+    <link rel="stylesheet" href="public/css/index.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rufina:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM_Sans:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Salsa:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" />
 </head>
 
 <body>
@@ -17,22 +17,15 @@
     <div class="accueil">
         <div class="hero-section">
             <div class="left">
-                <div class="plus-de-5oo">
-                {if isset($smarty.session.id_membre)}
-                    <em>Bienvenue {$smarty.session.prenom|escape}</em>
-                {else}
-                    <p>Bienvenue sur notre site !</p><br>
-                {/if}
-                <p>Plus de 5OO stages pour vous</p>
-                </div>
+                <div class="plus-de-5oo">Plus de 5OO stages pour vous</div>
                 <div class="texte">
-                <p>Trouver un stage peut être une étape difficile pour de nombreux
+                    Trouver un stage peut être une étape difficile pour de nombreux
                     étudiants. Nous sommes là pour aider les étudiants à trouver leur
-                    stage idéal en simplifiant le processus de recherche.</p>
+                    stage idéal en simplifiant le processus de recherche.
                 </div>
             </div>
-            <button class="boutonstage">Trouver un stage</button>
-            <button class="boutonscontact">Contactez-nous</button>
+            <button class="boutonstage"><a href="index.php?action=offre">Trouver un stage</button>
+            <button class="boutonscontact"><a href="index.php?action=contact">Contactez-nous</button>
             <img class="image2" src="public\logo\acc.png" />
         </div>
         <header>
@@ -91,6 +84,8 @@
                         <p class="recrutez-ds-maintenant">Postulez maintenat</p>
                     </span>
                 </div>
+                <button class="boutonpilotte"><a href="index.php?action=pilote">Voir les pilottes</button>
+                <button class="boutonetud"><a href="index.php?action=etudiant">Voir les etudiants</button>
             </div>
         </div>
     </div>

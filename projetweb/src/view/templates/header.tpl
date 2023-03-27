@@ -20,7 +20,7 @@
                         <li><a href="index.php?action=homepage"">Accueil</a></li>
                         <li><a href="index.php?action=apropos">A propos</a></li>
                         <li><a href="#">Avis</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.php?action=contact">Contact</a></li>
                     </ul>
                 </div>
             </div>

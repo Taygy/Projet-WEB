@@ -1,0 +1,162 @@
+.cadres2 {
+    position: absolute;
+    top: 257px;
+    left: 217px;
+    width: 1034px;
+    height: 1155px;
+}
+
+.secteur2 {
+    position: absolute;
+    top: 313px;
+    left: calc(50% + 255px);
+    display: flex;
+    align-items: center;
+    width: 133px;
+    height: 61px;
+}
+
+.secteur2 {
+    top: 572px;
+    left: calc(50% - 396px);
+    width: 424px;
+}
+
+.select {
+    position: absolute;
+    top: 312px;
+    left: 970px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-silver);
+    border: 3px solid var(--color-springgreen);
+    box-sizing: border-box;
+    width: 263px;
+    height: 63px;
+    color: var(--color-white);
+}
+
+.adresse2 {
+    position: absolute;
+    top: 628px;
+    left: calc(50% - 396px);
+    display: flex;
+    align-items: center;
+    width: 522px;
+    height: 61px;
+}
+
+.code-postal2,
+.comptences2,
+.e-mail2,
+.niveau-scolaire3,
+.ville-nice2 {
+    position: absolute;
+    top: 688px;
+    left: calc(50% - 396px);
+    display: flex;
+    align-items: center;
+    width: 133px;
+    height: 61px;
+}
+
+.code-postal2,
+.comptences2,
+.e-mail2,
+.niveau-scolaire3 {
+    top: 804px;
+    width: 555px;
+}
+
+.code-postal2,
+.comptences2,
+.niveau-scolaire3 {
+    top: 749px;
+    width: 380px;
+}
+
+.code-postal2,
+.comptences2 {
+    top: 688px;
+    left: calc(50% - 184px);
+    width: 263px;
+}
+
+.comptences2 {
+    top: 875px;
+    left: calc(50% - 396px);
+    width: 287px;
+}
+
+.contact-btn2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: var(--br-19xl);
+    background-color: var(--color-springgreen);
+    padding: 5px 15px;
+    border: 1px solid var(--color-springgreen);
+    color: white;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+    height: 80px;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 220px;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-btn2:hover {
+    color: inherit;
+    background-color: var(--color-gray-300);
+}
+
+.fille,
+.contact-btcontainer {
+    position: absolute;
+    color: var(--color-white);
+    text-align: center;
+}
+
+.contact-btcontainer {
+    top: 1137px;
+    left: 636px;
+    width: 196.35px;
+    height: 60px;
+}
+
+.fille {
+    top: 391px;
+    left: calc(50% - 469px);
+    font-size: var(--font-size-45xl);
+    text-transform: uppercase;
+    font-family: var(--font-rufina);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 654px;
+    height: 119px;
+}
+
+.descompet {
+    position: absolute;
+    top: 960px;
+    left: calc(50% - 396px);
+    font-size: var(--font-size-4xl);
+    display: flex;
+    align-items: center;
+    width: 589px;
+    height: 70px;
+}
+
+.emojie {
+    position: absolute;
+    top: 570px;
+    left: 865px;
+    width: 334px;
+    height: 319px;
+    object-fit: cover;
+}
