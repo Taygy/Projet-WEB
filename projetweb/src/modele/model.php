@@ -95,6 +95,37 @@ function getCommentaires($identifier)
 
 //LISTE DES FONCTIONS CREATE
 
+function createEtudiant(string $nom, string $prenom, string $promotion, string $centre, string $email, string $password_hash, string $id_adresse)
+{
+	$database = dbConnect();
+
+	// Vérifier si le centre existe déjà dans la table "ecole"
+	$statement = $database->prepare('SELECT id_ecole FROM ecole WHERE centre = ?');
+	$statement->execute([$centre]);
+	$result = $statement->fetch();
+
+	if ($result) {
+		// Le centre existe déjà, on récupère son ID école
+		$id_ecole = $result['id_ecole'];
+	} else {
+		// Le centre n'existe pas, on l'ajoute à la table "ecole"
+		$statement = $database->prepare('INSERT INTO ecole(centre) VALUES (?)');
+		$statement->execute([$centre]);
+		$id_ecole = $database->lastInsertId();
+	}
+
+	// Ajouter le membre étudiant à la table "membre"
+	$statement1 = $database->prepare('INSERT INTO membre (prenom, nom, mail, mdp_chiffre, etudiant, id_adresse) VALUES(?, ?, ?, ?, ?, ?)');
+	$affectedLines = $statement1->execute([$prenom, $nom, $email, $password_hash, 1, $id_adresse]);
+	$id_membre = $database->lastInsertId();
+
+	// Ajouter la liaison entre le membre et l'école dans la table "etudie"
+	$statement2 = $database->prepare('INSERT INTO etudie(id_membre, id_ecole, promotion) VALUES (?, ?, ?)');
+	$statement2->execute([$id_membre, $id_ecole, $promotion]);
+
+	return ($id_membre);
+}
+
 function createEntreprise(string $nom, string $description_entreprise, string $secteur, string $mail, string $confiance, string $nombre_employes, string $logo, string $visible)
 {
 	$database = dbConnect();
@@ -176,61 +207,81 @@ function createCompetenceRequises(int $id_offre, int $id_competence)
 	return ($affectedLines > 0);
 }
 
-function createEtudiant(string $nom, string $prenom, string $promotion, string $centre, string $email, string $password_hash, string $id_adresse)
-{
-    $database = dbConnect();
 
-    // Vérifier si le centre existe déjà dans la table "ecole"
-    $statement = $database->prepare('SELECT id_ecole FROM ecole WHERE centre = ?');
-    $statement->execute([$centre]);
-    $result = $statement->fetch();
-
-    if ($result) {
-        // Le centre existe déjà, on récupère son ID école
-        $id_ecole = $result['id_ecole'];
-    } else {
-        // Le centre n'existe pas, on l'ajoute à la table "ecole"
-        $statement = $database->prepare('INSERT INTO ecole(centre) VALUES (?)');
-        $statement->execute([$centre]);
-        $id_ecole = $database->lastInsertId();
-    }
-
-    // Ajouter le membre étudiant à la table "membre"
-    $statement1 = $database->prepare('INSERT INTO membre (prenom, nom, mail, mdp_chiffre, etudiant, id_adresse) VALUES(?, ?, ?, ?, ?, ?)');
-	$affectedLines = $statement1->execute([$prenom, $nom, $email, $password_hash, 1, $id_adresse]);
-    $id_membre = $database->lastInsertId();
-
-    // Ajouter la liaison entre le membre et l'école dans la table "etudie"
-    $statement2 = $database->prepare('INSERT INTO etudie(id_membre, id_ecole, promotion) VALUES (?, ?, ?)');
-    $statement2->execute([$id_membre, $id_ecole, $promotion]);
-
-    return ($id_membre);
-}
 
 function createCompetenceAcquise(string $competence, string $id_membre)
 {
-    $database = dbConnect();
-    $statement = $database->prepare('SELECT id_competence FROM competence WHERE competence = ?');
-    $statement->execute([$competence]);
-    $result = $statement->fetch();
+	$database = dbConnect();
+	$statement = $database->prepare('SELECT id_competence FROM competence WHERE competence = ?');
+	$statement->execute([$competence]);
+	$result = $statement->fetch();
 
-    if ($result) {
-        $statement = $database->prepare('INSERT INTO competences_acquises(id_competence, id_membre) VALUES (?, ?)');
+	if ($result) {
+		$statement = $database->prepare('INSERT INTO competences_acquises(id_competence, id_membre) VALUES (?, ?)');
 		$statement->execute([$result['id_competence'], $id_membre]);
-        return true;
-    } else {
-        // La compétence n'existe pas encore, on l'ajoute à la table "competence"
-        $statement = $database->prepare('INSERT INTO competence(competence) VALUES (?)');
-        $statement->execute([$competence]);
+		return true;
+	} else {
+		// La compétence n'existe pas encore, on l'ajoute à la table "competence"
+		$statement = $database->prepare('INSERT INTO competence(competence) VALUES (?)');
+		$statement->execute([$competence]);
 		$id_competence = $database->lastInsertId();
 		$statement1 = $database->prepare('INSERT INTO competences_acquises(id_competence, id_membre) VALUES (?, ?)');
-        $statement1->execute([$id_competence], $id_membre);
-        return true;
-    }
-	
+		$statement1->execute([$id_competence], $id_membre);
+		return true;
+	}
 }
 
+function ajouterOffreWishlist(int $id_membre, int $id_offre)
+{
+	$database = dbConnect();
+
+	// Vérifier si l'offre n'est pas déjà dans la wishlist de l'étudiant
+	$statement = $database->prepare('SELECT COUNT(*) FROM wishlist WHERE id_membre = ? AND id_offre = ?');
+	$statement->execute([$id_membre, $id_offre]);
+	$result = $statement->fetch();
+	if ($result && $result[0] > 0) {
+		// L'offre est déjà dans la wishlist de l'étudiant
+		return false;
+	}
+
+	// Ajouter l'offre à la wishlist de l'étudiant
+	$statement = $database->prepare('INSERT INTO wishlist(id_membre, id_offre) VALUES (?, ?)');
+	return $statement->execute([$id_membre, $id_offre]);
+}
+
+function getWishlist(int $id_membre)
+{
+	$database = dbConnect();
+	$statement = $database->prepare('SELECT * FROM wishlist JOIN offre ON wishlist.id_offre=offre.id_offre JOIN entreprise ON offre.id_entreprise=entreprise.id_entreprise WHERE id_membre= ?');
+	$statement->execute([$id_membre]);
+	$result = $statement->fetchAll(PDO::FETCH_OBJ);
+	return $result;
+}
 //LISTE DES FONCTIONS DELETE 
+
+function supprimerOffre(int $id_offre): bool
+{
+	$database = dbConnect();
+
+	// Supprimer l'offre de la table "offre"
+	$statement = $database->prepare('DELETE FROM offre WHERE id_offre = ?');
+	$affectedLines = $statement->execute([$id_offre]);
+
+	// Supprimer les compétences requises associées à cette offre
+	$statement = $database->prepare('DELETE FROM competences_requises WHERE id_offre = ?');
+	$statement->execute([$id_offre]);
+
+	return ($affectedLines > 0);
+}
+
+function supprimerOffreWishlist(int $id_membre, int $id_offre): bool
+{
+	$database = dbConnect();
+
+	// Supprimer l'offre de la wishlist de l'étudiant
+	$statement = $database->prepare('DELETE FROM wishlist WHERE id_membre = ? AND id_offre = ?');
+	return $statement->execute([$id_membre, $id_offre]);
+}
 
 function supprimerEntreprise(int $id_entreprise)
 {
@@ -263,6 +314,59 @@ function supprimerLocalisationEntreprise(int $id_entreprise)
 }
 
 //LISTE DES FONCTIONS MODIF
+
+function modifOffre(int $id_offre, string $titre, string $duree, string $remuneration, string $description_offre, string $nombre_places, string $competence)
+{
+	$database = dbConnect();
+	$statement = $database->prepare(
+		'UPDATE offre SET titre = ?, duree = ?, remuneration = ?, description_offre = ?, nombre_places = ? WHERE id_offre = ?'
+	);
+	$affectedLines = $statement->execute([$titre, $duree, $remuneration, $description_offre, $nombre_places, $id_offre]);
+
+	// Vérifier si la compétence a été modifiée
+	if ($affectedLines > 0 && !empty($competence)) {
+		$statement = $database->prepare('SELECT id_competence FROM competence WHERE competence = ?');
+		$statement->execute([$competence]);
+		$result = $statement->fetch();
+
+		if ($result) {
+			// La compétence existe déjà, on récupère son id
+			$id_competence = $result['id_competence'];
+		} else {
+			// La compétence n'existe pas encore, on l'ajoute à la table "competence"
+			$statement = $database->prepare('INSERT INTO competence(competence) VALUES (?)');
+			$statement->execute([$competence]);
+			$id_competence = $database->lastInsertId();
+		}
+
+		// Mettre à jour la table "competences_requises" avec la nouvelle compétence
+		$statement = $database->prepare('INSERT INTO competences_requises(id_offre, id_competence) VALUES (?, ?) ON DUPLICATE KEY UPDATE id_competence = VALUES(id_competence)');
+		$statement->execute([$id_offre, $id_competence]);
+	}
+
+	return ($affectedLines > 0);
+}
+
+function modifCompetence(string $competence)
+{
+	$database = dbConnect();
+	$statement = $database->prepare('SELECT id_competence FROM competence WHERE competence = ?');
+	$statement->execute([$competence]);
+	$result = $statement->fetch();
+
+	if ($result) {
+		// La compétence existe déjà, on ne fait rien
+		return true;
+	} else {
+		// La compétence n'existe pas encore, on l'ajoute à la table "competence"
+		$statement = $database->prepare('INSERT INTO competence(competence) VALUES (?)');
+		$statement->execute([$competence]);
+		return true;
+	}
+}
+
+
+
 
 function modifEntreprise(int $id_entreprise, string $nom, string $description_entreprise, string $secteur, string $mail, string $confiance, string $nombre_employes, string $logo, string $visible)
 {
@@ -315,7 +419,8 @@ function createComment(string $commentaire, string $note, string $id_membre, str
 
 //autres fonctions
 
-function setUser(string $sessiondata){
+function setUser(string $sessiondata)
+{
 	$database = dbConnect();
 	$query = $sessiondata;
 	$statement = $database->query("SELECT * FROM `membre`
@@ -324,11 +429,12 @@ function setUser(string $sessiondata){
 	return $user;
 }
 
-function verifMail(string $mail){
+function verifMail(string $mail)
+{
 	$database = dbConnect();
-    $query=$mail;
-    $statement = $database->query("SELECT * FROM membre WHERE `mail` = '$query'");
-    $user = $statement->fetchAll(PDO::FETCH_ASSOC);
+	$query = $mail;
+	$statement = $database->query("SELECT * FROM membre WHERE `mail` = '$query'");
+	$user = $statement->fetchAll(PDO::FETCH_ASSOC);
 	return $user;
 }
 
@@ -336,7 +442,7 @@ function verifMail(string $mail){
 function dbConnect()
 {
 	try {
-		$database = new PDO('mysql:host=localhost;dbname=livrable3;charset=utf8', 'root', '');
+		$database = new PDO('mysql:host=localhost;dbname=livrable3;charset=utf8', 'root', 'Toto003300');
 		$database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		return $database;
 	} catch (PDOException $e) {

@@ -14,32 +14,41 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" />
 </head>
 
-
-
 <body>
-    <header>
+<header>
         {include file="src/view/templates/header.tpl"}
     </header>
-
-    <h1>Signup</h1>
-
-    <div class="crer_etudiant"></div>
+<div class="crer-tudiant">
+    
+    <div class="crer-un-compte">Créer un compte étudiant</div>
+        <div class="desc55">
+            Facilitez l'accès des étudiants aux offres d'emploi en créant des
+            profils complets et ciblés, et permettez-leur d'explorer facilement des
+            milliers d'opportunités professionnelles.
+        </div>
+        <img class="support" src="public\logo/contact1.png" />
+        <div class="descccc">
+            Vous souhaitez aider vos étudiants à trouver des offres d'emploi plus
+            facilement ? Découvrez nos outils pour faciliter leur recherche et leur
+            permettre de postuler en quelques clics.
+        </div>
+        <div class="crer_etudiant"></div>
         <form id="MyForm" action="index.php?action=creeretudiant" method="post">
             <div>
-                <label class="prnom1" for="prenom">Prenom :</label>
-                <input class="prnom1" type="text" id="prenom" name="prenom" required>
+                <label class="promotion" for="prenom">Prenom :</label>
+                <input class="promotion1" type="text" id="prenom" name="prenom" required>
             </div>
             <div>
-                <label class="nom1" for="nom">Nom :</label>
-                <input class="nom1" type="text" id="nom" name="nom" required>
+                <label class="centre-de-formation" for="nom">Nom :</label>
+                <input class="centre-de-formation1" type="text" id="nom" name="nom" required>
             </div>
             <div>
-                <label class="promotion" for="promotion">Promotion :</label>
-                <input class="promotion1" type="text" id="promotion-input" name="promotion" required>
+                <label class="niveau-scolaire" for="promotiont">Promotion :</label>
+                <input class="niveau-scolaire1" type="text" id="promotion-input" name="promotion-input" required>
             </div>
             <div>
-                <label class="centre-de-formation" for="centre">Centre de formation:</label>
-                <input class="centre-de-formation1" type="text" id="formation-input" name="centre" required>
+                <label class="tlphone1" for="centre">Centre de formation:</label>
+                <input class="tel" type="number" id="formation-input" name="formation-input" required>
             </div>
             <div>
                 <label class="ville1" for="ville-input">Ville :</label>
@@ -79,12 +88,37 @@
                 <input type="checkbox" id="certify" name="certify">
             </div>
             <div class="bouton1">
-            <button type="submit" class="sinscrire">Envoyer</button>
+            <button type="submit" class="sinscrire">S'inscrire</button>
         </div>
         </form>
+        <div>
+            <div class="titre3">Diffusez vos offres avec nous</div>
+            <img class="img-time" src="public\logo/time.png" />
+            <div class="en1">
+                Pilotez facilement les candidatures de vos étudiants
+            </div>
+            <img class="img-ag" src="public\logo/agreement.png" />
+            <div class="desc">
+                Aidez vos étudiants à recevoir des candidatures qualifiées
+            </div>
+            <img class="img-read" src="public\logo/reading.png" />
+            <div class="description">
+                Facilitez la recherche d'entreprises pour les étudiants.
+            </div>
+        </div>
+        <div>
+            <div class="bouton">
+                <button class="contact">Contactez-nous</button>
+            </div>
+        </div>
+ </div>
     <footer>
             {include file="src/view/templates/footer.tpl"}
     </footer>
 </body>
 
 </html>
+
+
+
+

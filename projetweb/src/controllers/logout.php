@@ -1,5 +1,6 @@
 <?php
-function logOut(){
+function logOut()
+{
     session_start();
     session_destroy();
     header("Location: index.php?action=login");

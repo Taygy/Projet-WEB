@@ -19,25 +19,23 @@
         {include file="src/view/templates/header.tpl"}
     </header>
      <div class="chercher-un-stage">
-        <div class="nboffresdispo">{$offres|@count} offres disponibles</div>
-{foreach $offres as $offre}
+        <div class="nboffresdispo">{$pilotes|@count} pilotes disponibles</div>
+{foreach $pilotes as $pilote}
         <div class="gigabox">
             <div class="box">
-                <button class="option" > <a href="index.php?action=supprimeroffre&id={$offre->id_offre}">Supprimer</a></button>
-                <h4>{$offre->nom}</h4>
-                <img src="public\logo/{$offre->logo}" class="cap">
-                <div class="le_fameuxh1">{$offre->titre}</div>
-                <p>{$offre->description_offre} pour une durée de : <em>{$offre->duree}</em></p>
-                <em><a href="index.php?action=detailoffre&id={$offre->id_offre}">Détails</a></em>
+                <img src="public\logo/{$pilote->logo}" class="cap">
+                <div class="le_fameuxh1">{$pilote->nom}  {$pilote->prenom}</div>
+                <p>{$pilote->centre} {$pilote->promotion} 
+                {$pilote->mail} 
                 </p>
             </div>
         </div>
 {/foreach}
 		
-        </div>
         <footer>
     {include file="src/view/templates/footer.tpl"}
     </footer>
+        </div>
 </body>
 
 </html>

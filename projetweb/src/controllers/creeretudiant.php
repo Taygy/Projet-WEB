@@ -1,8 +1,9 @@
 <?php
 require_once('src/modele/model.php');
-function addEtudiant(array $input){
+function addEtudiant(array $input)
+{
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        
+
         if (empty($input["prenom"])) {
             die("Il manque le prenom");
         }
@@ -23,7 +24,7 @@ function addEtudiant(array $input){
             die("Il manque des informations sur l'adresse");
         }
 
-        if ( ! filter_var($input["email"], FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var($input["email"], FILTER_VALIDATE_EMAIL)) {
             die("L'email n'est pas valide");
         }
 
@@ -31,11 +32,11 @@ function addEtudiant(array $input){
             die("Le mot de passe doit contenir au moins 8 caractères");
         }
 
-        if ( ! preg_match("/[a-z]/i", $input["password"])) {
+        if (!preg_match("/[a-z]/i", $input["password"])) {
             die("Le mot de passe doit contenir au moins une lettre");
         }
 
-        if ( ! preg_match("/[0-9]/", $input["password"])) {
+        if (!preg_match("/[0-9]/", $input["password"])) {
             die("Le mot de passe doit contenir au moins un chiffre");
         }
 
@@ -44,8 +45,8 @@ function addEtudiant(array $input){
         }
 
         $password_hash = password_hash($input["password"], PASSWORD_DEFAULT);
-        $id_adresse=addAdresse($input["ville"], $input["code_postal"], $input["adresse_complete"]);
-        $id_membre=createEtudiant($input["nom"], $input["prenom"], $input["promotion"], $input["centre"], $input["email"], $password_hash, $id_adresse);
+        $id_adresse = addAdresse($input["ville"], $input["code_postal"], $input["adresse_complete"]);
+        $id_membre = createEtudiant($input["nom"], $input["prenom"], $input["promotion"], $input["centre"], $input["email"], $password_hash, $id_adresse);
         createCompetenceAcquise($input["competence"], $id_membre);
         header("Location: index.php?action=homepage");
     }
