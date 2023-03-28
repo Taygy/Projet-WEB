@@ -16,9 +16,10 @@ function deleteEntreprise(string $identifier)
             $success3 = supprimerEntreprise($identifier);
             if (!$success3) {
                 die('Impossible de modifier l\'entreprise !');
-            }
+            } 
+            
         }
     }
-    echo ('Il manque l\'identifiant de l\'entreprise');
+    header('Location : index.php?action=entreprise');
     return;
 }

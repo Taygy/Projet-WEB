@@ -38,7 +38,7 @@ function addEntreprise(array $input)
                 if (!$success3) {
                     die('Impossible de créer la relation entre l\'adresse et l\'entreprise !');
                 } else {
-                    header('Location: index.php?action=ajouterentreprise');
+                    
                 }
             }
         }
