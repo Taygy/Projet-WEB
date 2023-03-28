@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="public/css/blablabla.css" />
     <link rel="stylesheet" href="public/ajaxCodePostal.js" />
     <link rel="stylesheet" href="public/css/bouton.css" />
+    <link rel="stylesheet" href="public/css/pagination.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rufina:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM_Sans:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Salsa:wght@400&display=swap" />
@@ -35,13 +36,16 @@
             </div>
         </div>
 {/foreach}
-{foreach item=page from=range(1, $totalPages)}
-    {if $page == $currentPage}
-        <li class="active">{$page}</li>
-    {else}
-        <li><a href="index.php?page={$page}">{$page}</a></li>
-    {/if}
-{/foreach}
+<ul class="pagination">
+    {foreach item=page from=range(1, $totalPages)}
+        {if $page == $currentPage}
+            <li class="active">{$page}</li>
+        {else}
+            <li><a href="index.php?action=entreprise&page={$page}">{$page}</a></li>
+        {/if}
+    {/foreach}
+</ul>
+
 
         </div>
 

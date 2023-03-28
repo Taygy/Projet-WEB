@@ -21,8 +21,8 @@
             </header>
             <div class="cadre">
                 <img class="support" src="public\logo/contact1.png" />
-                <button class="btn-ret2"><a href="index.php?action=">Modifier</a></button>
-                <button class="supp3"><a href="index.php?action=">Supprimer</a></button>
+                <button class="btn-ret2"><a href="index.php?action=modifierentreprise&id={$entreprise[0]->id_entreprise}">Modifier</a></button>
+                <button class="supp3"><a href="index.php?action=supprimerentreprise&id={$entreprise[0]->id_entreprise}">Supprimer</a></button>
                 <div class="monaco-digital">{$entreprise[0]->nom}</div>
                 <div class="secteur">Secteur : {$entreprise[0]->secteur}</div>
                 <div class="adresse">Adresse : </div>

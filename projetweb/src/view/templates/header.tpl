@@ -19,7 +19,7 @@
                     <ul class="nav-links">
                         <li><a href="index.php?action=homepage"">Accueil</a></li>
                         <li><a href="index.php?action=apropos">A propos</a></li>
-                        <li><a href="#">Avis</a></li>
+                        <li><a href="index.php?action=avis">Avis</a></li>
                         <li><a href="index.php?action=contact">Contact</a></li>
                     </ul>
                 </div>

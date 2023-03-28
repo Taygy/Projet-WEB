@@ -128,6 +128,7 @@
         <div class="contact-btn19">
             <button class="contact-btn">Contactez-nous</button>
         </div>
+        
     </div>
 
    
@@ -135,7 +136,7 @@
         {include file="src/view/templates/footer.tpl"}
     </footer>
 
-    <script src="public/ajaxCodePostal"></script>
+    <script src="public/ajaxCodePostal.js"></script>
 </body>
 
 </html>

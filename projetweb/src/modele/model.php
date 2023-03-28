@@ -3,6 +3,80 @@
 
 //LISTE DES FONCTIONS SEARCH
 
+function getAllPilote($depart, $piloteParPage)
+{
+	$database = dbConnect();
+	$statement = $database->prepare('SELECT * FROM membre JOIN etudie ON membre.id_membre=etudie.id_membre JOIN ecole ON etudie.id_ecole=ecole.id_ecole WHERE pilote = 1 ORDER BY membre.id_membre  DESC LIMIT :premier, :parpage');
+	$statement->bindValue(':premier', $depart, PDO::PARAM_INT);
+	$statement->bindValue(':parpage', $piloteParPage, PDO::PARAM_INT);
+	$statement->execute();
+	return $statement->fetchAll(PDO::FETCH_OBJ);
+}
+
+function getNbPilote()
+{
+	$database = dbConnect();
+	$statement = $database->prepare('SELECT COUNT(*) AS nb_pilotes FROM membre WHERE pilote=1');
+	$statement->execute();
+	$result = $statement->fetch();
+	return (int) $result['nb_pilotes'];
+}
+
+function getAllEtudiant($depart, $etudiantParPage)
+{
+	$database = dbConnect();
+	$statement = $database->prepare('SELECT * FROM membre JOIN etudie ON membre.id_membre=etudie.id_membre JOIN ecole ON etudie.id_ecole=ecole.id_ecole JOIN competences_acquises ON membre.id_membre=competences_acquises.id_membre JOIN competence ON competences_acquises.id_competence=competence.id_competence WHERE etudiant = 1 ORDER BY membre.id_membre  DESC LIMIT :premier, :parpage');
+	$statement->bindValue(':premier', $depart, PDO::PARAM_INT);
+	$statement->bindValue(':parpage', $etudiantParPage, PDO::PARAM_INT);
+	$statement->execute();
+	return $statement->fetchAll(PDO::FETCH_OBJ);
+}
+
+function getNbEtudiant()
+{
+	$database = dbConnect();
+	$statement = $database->prepare('SELECT COUNT(*) AS nb_etudiants FROM membre WHERE etudiant=1');
+	$statement->execute();
+	$result = $statement->fetch();
+	return (int) $result['nb_etudiants'];
+}
+function getAllEntreprises($depart, $entrepriseParPage)
+{
+	$database = dbConnect();
+	$statement = $database->prepare('SELECT * FROM entreprise ORDER BY id_entreprise DESC LIMIT :premier, :parpage');
+	$statement->bindValue(':premier', $depart, PDO::PARAM_INT);
+	$statement->bindValue(':parpage', $entrepriseParPage, PDO::PARAM_INT);
+	$statement->execute();
+	return $statement->fetchAll(PDO::FETCH_OBJ);
+}
+
+function getNbEntreprises()
+{
+	$database = dbConnect();
+	$statement = $database->prepare('SELECT COUNT(*) AS nb_entreprises FROM entreprise');
+	$statement->execute();
+	$result = $statement->fetch();
+	return (int) $result['nb_entreprises'];
+}
+
+function getAllOffre($depart, $offreParPage)
+{
+    $database = dbConnect();
+    $statement = $database->prepare('SELECT * FROM offre  JOIN entreprise ON offre.id_entreprise=entreprise.id_entreprise ORDER BY id_offre DESC LIMIT :premier, :parpage');
+    $statement->bindValue(':premier', $depart, PDO::PARAM_INT);
+    $statement->bindValue(':parpage', $offreParPage, PDO::PARAM_INT);
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_OBJ);
+}
+
+function getNbOffres()
+{
+    $database = dbConnect();
+    $statement = $database->prepare('SELECT COUNT(*) AS nb_offre FROM offre');
+    $statement->execute();
+    $result = $statement->fetch();
+    return (int) $result['nb_offre'];
+}
 function searchOffre(string $search)
 {
 	$database = dbConnect();
@@ -271,7 +345,7 @@ function createCompetenceAcquise(string $competence, string $id_membre)
         $statement->execute([$competence]);
 		$id_competence = $database->lastInsertId();
 		$statement1 = $database->prepare('INSERT INTO competences_acquises(id_competence, id_membre) VALUES (?, ?)');
-        $statement1->execute([$id_competence], $id_membre);
+        $statement1->execute([$id_competence, $id_membre]);
         return true;
     }
 	
@@ -389,6 +463,56 @@ WHERE adresse.id_adresse IN (
 	);
 	$affectedLines = $statement->execute([$ville, $code_postal, $adresse_complete, $identifier]);
 	return ($affectedLines > 0);
+}
+
+function modifOffre(int $id_offre, string $titre, string $duree, string $remuneration, string $description_offre, string $nombre_places, string $competence)
+{
+	$database = dbConnect();
+	$statement = $database->prepare(
+		'UPDATE offre SET titre = ?, duree = ?, remuneration = ?, description_offre = ?, nombre_places = ? WHERE id_offre = ?'
+	);
+	$affectedLines = $statement->execute([$titre, $duree, $remuneration, $description_offre, $nombre_places, $id_offre]);
+
+	// Vérifier si la compétence a été modifiée
+	if ($affectedLines > 0 && !empty($competence)) {
+		$statement = $database->prepare('SELECT id_competence FROM competence WHERE competence = ?');
+		$statement->execute([$competence]);
+		$result = $statement->fetch();
+
+		if ($result) {
+			// La compétence existe déjà, on récupère son id
+			$id_competence = $result['id_competence'];
+		} else {
+			// La compétence n'existe pas encore, on l'ajoute à la table "competence"
+			$statement = $database->prepare('INSERT INTO competence(competence) VALUES (?)');
+			$statement->execute([$competence]);
+			$id_competence = $database->lastInsertId();
+		}
+
+		// Mettre à jour la table "competences_requises" avec la nouvelle compétence
+		$statement = $database->prepare('INSERT INTO competences_requises(id_offre, id_competence) VALUES (?, ?) ON DUPLICATE KEY UPDATE id_competence = VALUES(id_competence)');
+		$statement->execute([$id_offre, $id_competence]);
+	}
+
+	return ($affectedLines > 0);
+}
+
+function modifCompetence(string $competence)
+{
+	$database = dbConnect();
+	$statement = $database->prepare('SELECT id_competence FROM competence WHERE competence = ?');
+	$statement->execute([$competence]);
+	$result = $statement->fetch();
+
+	if ($result) {
+		// La compétence existe déjà, on ne fait rien
+		return true;
+	} else {
+		// La compétence n'existe pas encore, on l'ajoute à la table "competence"
+		$statement = $database->prepare('INSERT INTO competence(competence) VALUES (?)');
+		$statement->execute([$competence]);
+		return true;
+	}
 }
 
 function localiseEntreprise(int $id_adresse, int $id_entreprise)

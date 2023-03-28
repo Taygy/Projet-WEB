@@ -68,12 +68,12 @@
                 <div class="etudiant">Etudiant ?</div>
                 <div class="en-savoir-plus">
                     <ul>
-                        <a href="#">En savoir plus</a>
+                        <a href="index.php?action=etudiant">En savoir plus</a>
                     </ul>
                 </div>
                 <div class="en-savoir-plus1">
                     <ul>
-                        <a href="#">En savoir plus</a>
+                        <a href="index.php?action=entreprise">En savoir plus</a>
                     </ul>
                 </div>
                 <div class="vous-tes-tudient-container">

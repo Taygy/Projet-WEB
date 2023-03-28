@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="public/css/creeretudiant.css" />
     <link rel="stylesheet" href="public/css/contact.css" />
     <link rel="stylesheet" href="public/css/header&footer.css" />
+    <script src="public/ajaxCodePostal.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rufina:wght@400&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM Sans:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM_Sans:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Salsa:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" />
 </head>
@@ -44,19 +45,19 @@
             </div>
             <div>
                 <label class="niveau-scolaire" for="promotiont">Promotion :</label>
-                <input class="niveau-scolaire1" type="text" id="promotion-input" name="promotion-input" required>
+                <input class="niveau-scolaire1" type="text" id="promotion-input" name="promotion" required>
             </div>
             <div>
                 <label class="tlphone1" for="centre">Centre de formation:</label>
-                <input class="tel" type="number" id="formation-input" name="formation-input" required>
+                <input class="tel" type="text" id="formation-input" name="centre" required>
             </div>
             <div>
                 <label class="ville1" for="ville-input">Ville :</label>
-                <input class="ville" type="text" id="ville-input" name="ville" required>
+                <input class="ville" type="text" id="ville" name="ville" required>
             </div>
             <div>
                 <label class="code-postal1" for="code-postal">Code postal :</label>
-                <input class="code-postal" type="text" id="code-input" name="code_postal" required>
+                <input class="code-postal" type="text" id="code_postal" name="code_postal" required>
             </div>
             <div>
                 <label class="adresse1" for="adresse_complete">Adresse:</label>
@@ -111,12 +112,14 @@
                 <button class="contact">Contactez-nous</button>
             </div>
         </div>
+        
  </div>
     <footer>
             {include file="src/view/templates/footer.tpl"}
     </footer>
 
-    <script src="public/ajaxCodePostal"></script>
+        
+
 </body>
 
 </html>

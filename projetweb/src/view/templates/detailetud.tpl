@@ -25,22 +25,20 @@
                 <option value="supp">Supprimer</option>
                 <option value="mod">Modifier</option>
             </select>
-            <div class="secteur2">Pilote : {$etudiant[0]->id_pilote}</div>
-            <div class="adresse2">Adresse : {$etudiant[0]->}</div>
-            <div class="ville-nice2">Ville : {$etudiant[0]->}</div>
+            <div class="secteur2">Pilote : {$etudiant[0]->id_membre}</div>
+            <div class="adresse2">Adresse : {$etudiant[0]->adresse_complete}</div>
+            <div class="ville-nice2">Ville : {$etudiant[0]->ville}</div>
             <div class="e-mail2">
                 e-mail : {$etudiant[0]->mail} 
             </div>
             <div class="niveau-scolaire3">Centre : {$etudiant[0]->centre}</div>
-            <div class="code-postal2">Code postal : {$etudiant[0]->}</div>
-            <div class="comptences2">Compétences :</div>
+            <div class="code-postal2">Code postal : {$etudiant[0]->code_postal}</div>
+            <div class="comptences2">Compétences : {$etudiant[0]->competence} </div>
             <div class="contact-btcontainer">
                 <button class="contact-btn2">Contacter</button>
             </div>
             <div class="fille">{$etudiant[0]->nom} {$etudiant[0]->prenom}</div>
-            <div class="descompet">
-                {$etudiant[0]->id_competence}
-            </div>
+            
             <img class="emojie" src="amel2.png" />
         </div>
         <div class="group-container">

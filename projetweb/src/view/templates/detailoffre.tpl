@@ -50,7 +50,7 @@
                 <button class="btn-pos"> <a href="#"> Postuler
             </div>
             <div class="whishlist">
-                <button class="boutonsajout"> <a href="#">Ajouter à la wishlist
+                <button class="boutonsajout"> <a href="index.php?action=ajouterwishlist&id={$offre[0]->id_offre}">Ajouter à la wishlist
             </div>
             <div class="en-savoir-plus">
                 <ul>

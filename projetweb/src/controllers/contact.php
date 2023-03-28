@@ -3,7 +3,7 @@
 
 require_once('src/modele/model.php');
 
-function mecontact()
+function contact()
 {
 
     require('src/view/contact.php');
