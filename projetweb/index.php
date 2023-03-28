@@ -18,6 +18,8 @@ require_once('src/controllers/ajouterwishlist.php');
 require_once('src/controllers/mawishlist.php');
 require_once('src/controllers/deletewishlist.php');
 require_once('src/controllers/supprimeroffre.php');
+require_once('src/controllers/contact.php');
+
 
 
 
@@ -40,7 +42,12 @@ if (isset($_GET['action']) && $_GET['action'] !== '') {
             die;
         }
     } elseif ($_GET['action'] === 'entreprise') {
-        entreprise();
+        if (isset($_GET['page']) && !empty($_GET['page'])) {
+            entreprise();
+        } else {
+            $pageCourante = 1;
+            entreprise();
+        }
     } elseif ($_GET['action'] === 'detailentreprise') {
         if (isset($_GET['id']) && $_GET['id'] > 0) {
             $identifier = $_GET['id'];
@@ -123,6 +130,8 @@ if (isset($_GET['action']) && $_GET['action'] !== '') {
         logOut();
     } elseif ($_GET['action'] === 'mawishlist') {
         mawishlist();
+    } elseif ($_GET['action'] === 'contact') {
+        mecontact();
     }
 } else {
     homepage();

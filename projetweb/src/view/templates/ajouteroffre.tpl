@@ -53,7 +53,7 @@
 
     </div>
 </div>
-
+    <script src="public/ajaxCodePostal"></script>
     <footer>
         {include file="src/view/templates/footer.tpl"}
     </footer>

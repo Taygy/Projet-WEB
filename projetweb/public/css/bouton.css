@@ -1,0 +1,98 @@
+.btn-ret2 {
+    padding: 5px 15px;
+    background-color: var(--color-springgreen);
+    color: var(--color-white);
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+    line-height: normal;
+    position: absolute;
+    font-size: var(--font-size-lg);
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--br-xl);
+    border: 3px solid var(--color-springgreen);
+    top: 34px;
+    left: 50px;
+    width: 263px;
+    height: 63px;
+    font-size: var(--font-size-17xl);
+    font-family: var(--font-dm-sans);
+    padding: 5px 15px;
+    letter-spacing: 0;
+}
+
+.btn-ret2 a {
+    color: var(--color-white);
+    font-size: var(--font-size-xl);
+    font-family: var(--font-dm-sans);
+}
+
+.btn-ret2:hover {
+    color: inherit;
+    background-color: var(--color-gray-300);
+}
+
+.supp3 {
+    position: absolute;
+    top: 34px;
+    left: 950px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-silver);
+    border: 3px solid var(--color-springgreen);
+    box-sizing: border-box;
+    color: var(--color-white);
+    width: 263px;
+    height: 63px;
+    padding: 5px 15px;
+}
+
+.supp3 a {
+    color: var(--color-white);
+    font-size: var(--font-size-xl);
+    font-family: var(--font-dm-sans);
+}
+
+.supp3:hover {
+    color: inherit;
+    background-color: var(--color-springgreen);
+}
+
+.ajouter {
+    position: absolute;
+    top: 120px;
+    margin-left: 1142px;
+    border-radius: var(--br-xl);
+    background-color: transparent;
+    border: 3px solid var(--color-springgreen);
+    box-sizing: border-box;
+    width: 263px;
+    height: 63px;
+    color: var(--color-white);
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+    letter-spacing: 0;
+    line-height: normal;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ajouter a {
+    color: var(--color-white);
+}
+
+.ajouter:hover {
+    color: inherit;
+    background-color: var(--color-springgreen);
+}
+
+.btn-ret a {
+    color: var(--color-white);
+    font-size: var(--font-size-17xl);
+    font-family: var(--font-dm-sans);
+}

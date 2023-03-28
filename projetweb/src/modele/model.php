@@ -1,7 +1,31 @@
 <?php
 // src/model.php
+//PAGINATION : 
+
+
+function getAllEntreprises($depart, $entrepriseParPage)
+{
+	$database = dbConnect();
+	$statement = $database->prepare('SELECT * FROM entreprise ORDER BY id_entreprise DESC LIMIT :premier, :parpage');
+	$statement->bindValue(':premier', $depart, PDO::PARAM_INT);
+	$statement->bindValue(':parpage', $entrepriseParPage, PDO::PARAM_INT);
+	$statement->execute();
+	return $statement->fetchAll(PDO::FETCH_OBJ);
+}
+
+function getNbEntreprises()
+{
+	$database = dbConnect();
+	$statement = $database->prepare('SELECT COUNT(*) AS nb_entreprises FROM entreprise');
+	$statement->execute();
+	$result = $statement->fetch();
+	return (int) $result['nb_entreprises'];
+}
+
+
 
 //LISTE DES FONCTIONS SEARCH
+
 
 function searchOffre(string $search)
 {

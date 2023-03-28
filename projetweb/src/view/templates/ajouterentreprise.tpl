@@ -104,6 +104,7 @@
                     Je certifie que toutes les informations entrées sont correctes
                     <input type="checkbox" id="certify" name="certify" required>
                 </div>
+                
             </form>
         </div>
 
@@ -133,6 +134,8 @@
     <footer>
         {include file="src/view/templates/footer.tpl"}
     </footer>
+
+    <script src="public/ajaxCodePostal"></script>
 </body>
 
 </html>

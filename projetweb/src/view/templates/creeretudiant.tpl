@@ -115,6 +115,8 @@
     <footer>
             {include file="src/view/templates/footer.tpl"}
     </footer>
+
+    <script src="public/ajaxCodePostal"></script>
 </body>
 
 </html>
