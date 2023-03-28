@@ -22,6 +22,7 @@ require_once('src/controllers/mawishlist.php');
 require_once('src/controllers/deletewishlist.php');
 require_once('src/controllers/supprimeroffre.php');
 require_once('src/controllers/contact.php');
+require_once('src/controllers/avis.php');
 
 if (isset($_GET['action']) && $_GET['action'] !== '') {
     if ($_GET['action'] === 'offre') {
@@ -29,8 +30,10 @@ if (isset($_GET['action']) && $_GET['action'] !== '') {
             $search = $_POST['search'];
             soffres($search);
         } else {
+            $pageCourante=1;
             offre();
         }
+        
     } elseif ($_GET['action'] === 'detailoffre') {
         if (isset($_GET['id']) && $_GET['id'] > 0) {
             $identifier = $_GET['id'];
@@ -42,7 +45,9 @@ if (isset($_GET['action']) && $_GET['action'] !== '') {
             die;
         }
     } elseif ($_GET['action'] === 'entreprise') {
-        entreprise();
+            $pageCourante = 1;
+            entreprise();
+
     } elseif ($_GET['action'] === 'detailentreprise') {
         if (isset($_GET['id']) && $_GET['id'] > 0) {
             $identifier = $_GET['id'];
@@ -73,12 +78,15 @@ if (isset($_GET['action']) && $_GET['action'] !== '') {
         } else {
             echo 'Erreur : aucun identifiant d\'offre envoyé';
             die;
+        }
         } elseif ($_GET['action'] === 'ajouterentreprise') {
         addEntreprise($_POST);
     } elseif ($_GET['action'] === 'homepage') {
         homepage();
     } elseif ($_GET['action'] === 'apropos') {
         apropos();
+    } elseif ($_GET['action'] === 'avis') {
+        avis();
     } elseif ($_GET['action'] === 'modifierentreprise') {
         if (isset($_GET['id']) && $_GET['id'] > 0) {
             $identifier = $_GET['id'];
@@ -89,7 +97,7 @@ if (isset($_GET['action']) && $_GET['action'] !== '') {
 
             die;
         }
-    } elseif ($_GET['action'] === 'deleteentreprise') {
+    } elseif ($_GET['action'] === 'supprimerentreprise') {
         if (isset($_GET['id']) && $_GET['id'] > 0) {
             $identifier = $_GET['id'];
 
@@ -118,8 +126,10 @@ if (isset($_GET['action']) && $_GET['action'] !== '') {
     } elseif ($_GET['action'] === 'creerpilote') {
         addPilote($_POST);
     } elseif ($_GET['action'] === 'pilote') {
+        $pageCourante = 1;
         pilote();
     } elseif ($_GET['action'] === 'etudiant') {
+        $pageCourante = 1;
         etudiant();
     } elseif ($_GET['action'] === 'mawishlist') {
         mawishlist();
@@ -136,9 +146,9 @@ if (isset($_GET['action']) && $_GET['action'] !== '') {
             die;
         }
     }
+}
+
     
 else {
     homepage();
 }
-
-    
