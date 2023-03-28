@@ -1,5 +1,7 @@
 # Projet-WEB
-Projet Web Thomas Malek Valentin 
+Projet Web Thomas Malek Valentin
+
+Configuration de Vhost dans une configuration type apache sur Xamp.
 
 
 Ouvrez le fichier de configuration d'Apache httpd.conf situé dans le dossier C:\xampp\apache\conf
@@ -11,9 +13,9 @@ Ouvrez le fichier de configuration des vhosts httpd-vhosts.conf situé dans le d
 Ajoutez le bloc de configuration ci dessous :
 
 <VirtualHost *:80>
-    DocumentRoot "C:/xampp/htdocs/Projet-WEB-thomas/projetweb"
+    DocumentRoot "C:/xampp/htdocs/Projet-WEB/projetweb"
     ServerName cesi.stage
-    <Directory "C:/xampp/htdocs/Projet-WEB-thomas/projetweb">
+    <Directory "C:/xampp/htdocs/Projet-WEB/projetweb">
         Options Indexes FollowSymLinks MultiViews
         AllowOverride All
         Require all granted
