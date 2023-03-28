@@ -1,0 +1,633 @@
+.plus-de-5oo,
+.texte {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    width: 755px;
+    height: 200px;
+}
+
+.texte {
+    top: 201px;
+    left: 1px;
+    font-size: var(--font-size-11xl);
+    font-family: var(--font-dm-sans);
+    color: var(--color-gray-100);
+    width: 795px;
+    height: 87px;
+}
+
+.left {
+    position: absolute;
+    top: 143px;
+    left: 0;
+    width: 796px;
+    height: 288px;
+    text-align: left;
+    font-family: var(--font-rufina);
+}
+
+.boutonstage {
+    padding: 5px 15px;
+    background-color: var(--color-springgreen);
+    border: 1px solid var(--color-springgreen);
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+    height: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 135px;
+    position: absolute;
+    top: 500px;
+    left: 0px;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 135px;
+    height: 50px;
+    min-width: 201px;
+}
+
+.boutonstage a {
+    color: var(--color-white);
+}
+
+.boutonstage:hover {
+    color: inherit;
+    background-color: var(--color-gray-300);
+}
+
+.boutonscontact {
+    padding: 5px 15px;
+    background-color: transparent;
+    border: 1px solid var(--color-springgreen);
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+    height: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 135px;
+    position: absolute;
+    top: 500px;
+    left: 250px;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 135px;
+    height: 50px;
+    min-width: 201px;
+}
+
+.boutonscontact a {
+    color: var(--color-white);
+}
+
+.boutonscontact:hover {
+    color: inherit;
+    background-color: var(--color-springgreen);
+}
+
+.boutonoff {
+    padding: 5px 15px;
+    background-color: var(--color-springgreen);
+    border: 1px solid var(--color-springgreen);
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+    height: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 135px;
+    position: absolute;
+    top: 570px;
+    right: 100px;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 135px;
+    height: 50px;
+    min-width: 201px;
+}
+
+.boutonoff a {
+    color: var(--color-white);
+}
+
+.boutonoff:hover {
+    color: inherit;
+    background-color: var(--color-gray-300);
+}
+
+.boutonvoir {
+    padding: 5px 15px;
+    background-color: transparent;
+    border: 1px solid var(--color-springgreen);
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 570px;
+    right: 350px;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 135px;
+    height: 50px;
+    min-width: 201px;
+}
+
+.boutonvoir a {
+    color: var(--color-white);
+}
+
+.boutonvoir:hover {
+    color: inherit;
+    background-color: var(--color-springgreen);
+}
+
+.image2 {
+    position: absolute;
+    top: 0;
+    left: 747px;
+    border-radius: 344.5px;
+    width: 689px;
+    height: 710px;
+    object-fit: cover;
+}
+
+.hero-section {
+    position: absolute;
+    top: 56px;
+    left: 108px;
+    width: 1440px;
+    height: 702px;
+    text-align: center;
+    font-size: var(--font-size-33xl);
+}
+
+
+.contact {
+    left: 138px;
+    color: var(--color-white);
+}
+
+.about-child {
+    background-color: var(--color-darkslategray);
+    height: 700px;
+}
+
+.explorer {
+    position: absolute;
+    top: 98px;
+    left: 686px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    display: inline-block;
+    color: var(--color-springgreen);
+    width: 173px;
+    height: 24px;
+}
+
+.trouvez-votre-carrire {
+    position: absolute;
+    top: 158px;
+    left: calc(50% - 64px);
+    font-size: var(--font-size-26xl);
+    font-family: var(--font-rufina);
+    display: flex;
+    align-items: center;
+    width: 483px;
+    height: 100px;
+}
+
+.chez-nous-nous {
+    position: absolute;
+    top: 262px;
+    left: calc(50% - 64px);
+    font-size: var(--font-size-6xl);
+    color: var(--color-darkgray);
+    display: flex;
+    align-items: center;
+    width: 670px;
+    height: 282px;
+}
+
+.image-3-icon {
+    position: absolute;
+    top: 69px;
+    left: 114px;
+    width: 488px;
+    height: 584px;
+    object-fit: cover;
+}
+
+.about,
+.image-5-icon {
+    position: absolute;
+    top: 725px;
+    left: 0;
+    width: 1500px;
+    height: 700px;
+}
+
+.image-5-icon {
+    top: 165px;
+    left: 65px;
+    border-radius: 24px;
+    width: 358px;
+    height: 312px;
+    object-fit: cover;
+}
+
+.tech-1-item {
+    position: absolute;
+    top: 147px;
+    left: calc(50% - 371.34px);
+    border-radius: var(--br-mini);
+    background-color: var(--color-silver);
+    border: 2px solid var(--color-springgreen);
+    box-sizing: border-box;
+    width: 801px;
+    height: 338px;
+}
+
+.entreprise {
+    position: absolute;
+    top: 227px;
+    left: calc(50% - 20.34px);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 590.68px;
+    height: 40px;
+}
+
+.recrutez-ds-maintenant {
+    margin: 0;
+}
+
+.recrutez-ds-maintenant-container1 {
+    line-break: anywhere;
+    width: 100%;
+}
+
+.recrutez-ds-maintenant-container {
+    position: absolute;
+    top: 284px;
+    left: calc(50% - 247.34px);
+    font-size: var(--font-size-xl);
+    font-family: var(--font-dm-sans);
+    color: var(--color-darkgray);
+    text-align: right;
+    display: flex;
+    align-items: center;
+    width: 671.23px;
+    height: 91px;
+}
+
+.image-4-icon,
+.tech-1 {
+    position: absolute;
+    top: 296px;
+    left: 0;
+    width: 859.32px;
+    height: 494px;
+}
+
+.image-4-icon {
+    top: 0;
+    left: 467px;
+    border-radius: 22px;
+    width: 357px;
+    height: 244px;
+    object-fit: cover;
+}
+
+.tech-1-inner {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 412px);
+    border-radius: var(--br-mini);
+    background-color: var(--color-silver);
+    border: 2px solid var(--color-springgreen);
+    box-sizing: border-box;
+    width: 824px;
+    height: 338px;
+}
+
+.etudiant {
+    position: absolute;
+    top: 146px;
+    left: calc(50% - 345.25px);
+    font-size: var(--font-size-17xl);
+    text-transform: uppercase;
+    font-family: var(--font-rufina);
+    display: flex;
+    align-items: center;
+    width: 607.64px;
+    height: 40px;
+}
+
+.en-savoir-plus {
+    position: absolute;
+    top: 260px;
+    left: 610px;
+    text-decoration: underline;
+}
+
+.en-savoir-plus1 {
+    position: absolute;
+    top: 276px;
+    left: 100px;
+    text-decoration: underline;
+}
+
+.en-savoir-plus ul a {
+    color: var(--color-white);
+    transition: color .3s;
+}
+
+.en-savoir-plus ul a:hover {
+    color: var(--color-springgreen);
+}
+
+.en-savoir-plus1 ul a {
+    color: var(--color-white);
+    transition: color .3s;
+    left: 200px;
+}
+
+.en-savoir-plus1 ul a:hover {
+    color: var(--color-springgreen);
+}
+
+.en-savoir-plus1 {
+    top: 700px;
+    left: 110px;
+}
+
+.vous-tes-tudient-container {
+    position: absolute;
+    top: 205px;
+    left: calc(50% - 345.25px);
+    color: var(--color-darkgray);
+    display: flex;
+    align-items: center;
+    width: 690.5px;
+    height: 91px;
+}
+
+.tech-11,
+.technology {
+    position: absolute;
+    top: 0;
+    left: 538px;
+    width: 824px;
+    height: 756px;
+    text-align: left;
+    font-size: var(--font-size-xl);
+    font-family: var(--font-dm-sans);
+}
+
+.technology {
+    top: 1534px;
+    left: 60px;
+    width: 1362px;
+    height: 790px;
+    text-align: center;
+    font-size: var(--font-size-17xl);
+    font-family: var(--font-rufina);
+}
+
+.accueil {
+    position: relative;
+    background-color: var(--color-gray-200);
+    width: 100%;
+    height: 2500px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-xl);
+    color: var(--color-white);
+    font-family: var(--font-dm-sans);
+}
+
+.triangle {
+    height: 100px;
+    left: 460px;
+    position: absolute;
+    top: 0px;
+    width: 250px;
+    border-left: 150px solid rgb(40, 38, 38);
+    border-right: 150px solid transparent;
+    border-top: 150px solid transparent;
+    border-bottom: 150px solid transparent;
+}
+
+.boutonpilotte {
+    padding: 5px 15px;
+    background-color: var(--color-springgreen);
+    border: 1px solid var(--color-springgreen);
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 135px;
+    position: absolute;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 135px;
+    height: 50px;
+    min-width: 201px;
+}
+
+.boutonpilotte {
+    top: 870px;
+    right: 100px;
+}
+
+.boutonpilotte a {
+    color: var(--color-white);
+}
+
+.boutonpilotte:hover {
+    color: inherit;
+    background-color: var(--color-gray-300);
+}
+
+.boutonetud {
+    padding: 5px 15px;
+    background-color: var(--color-springgreen);
+    border: 1px solid var(--color-springgreen);
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 135px;
+    position: absolute;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 135px;
+    height: 50px;
+    min-width: 201px;
+}
+
+.boutonetud {
+    top: 870px;
+    right: 350px;
+}
+
+.boutonetud a {
+    color: var(--color-white);
+}
+
+.boutonetud:hover {
+    color: inherit;
+    background-color: var(--color-gray-300);
+}
+
+/*responsive*/
+
+/* Pour les écrans d'une largeur maximale de 768px */
+@media (max-width: 768px) {
+    .hero-section {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-size: var(--font-size-33xl);
+    }
+
+    .left {
+        position: static;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-family: var(--font-rufina);
+    }
+
+    .plus-de-5oo,
+    .texte {
+        position: static;
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .texte {
+        top: 0;
+        left: 0;
+        font-size: var(--font-size-11xl);
+        font-family: var(--font-dm-sans);
+        color: var(--color-gray-100);
+    }
+
+    .boutonstage {
+        position: static;
+        margin: 20px auto;
+    }
+
+    .boutonscontact {
+        position: static;
+        margin: 20px auto;
+    }
+
+    .image2 {
+        position: static;
+        top: 0;
+        left: 0;
+        border-radius: 344.5px;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .explorer {
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        height: auto;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .trouvez-votre-carrire {
+        top: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        height: auto;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .boutonoff {
+        position: relative;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 50px;
+    }
+
+    .boutonvoir {
+        position: relative;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 20px;
+    }
+
+    .chez-nous-nous {
+        top: 400px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        height: auto;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .image-3-icon {
+        display: none;
+    }
+}
