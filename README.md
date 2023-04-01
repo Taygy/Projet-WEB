@@ -1,6 +1,10 @@
 # Projet-WEB
 Projet Web Thomas Malek Valentin
 
+# Smarty
+Il va falloir que vous installiez smarty sur votre ordinateur. Téléchargez-le directement dans le fichier htdocs ou www, dans le dossier dans lequel vous allez mettre tout le code. Le fichier contenant les classes Smarty doit respecter l'arborescence : libs/smarty/smarty-master/libs/Smarty-class.php
+Ou vous pouvez le changer directement dans le code dans la partie Projetweb/src/view et ce sont tous les fichiers.php
+
 # Base de données
 Pour une meilleure expérience directe, la base de données que nous avons utilisées pour les tests est disponible dans deux versions (une remplie et l'autre vide)
 
