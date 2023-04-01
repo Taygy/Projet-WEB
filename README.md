@@ -1,7 +1,7 @@
 # Projet-WEB
 Projet Web Thomas Malek Valentin
 
-#Base de données
+# Base de données
 Pour une meilleure expérience directe, la base de données que nous avons utilisées pour les tests est disponible dans deux versions (une remplie et l'autre vide)
 
 # Vhost
