@@ -1,7 +1,9 @@
 # Projet-WEB
-Projet Web Thomas Malek Valentin
+# Projet Web Thomas Malek Valentin
 
-Configuration de Vhost dans une configuration type apache sur Xamp.
+# Pour une meilleure expérience directe, la base de données que nous avons utilisées pour les tests est disponible dans deux versions (une remplie et l'autre vide)
+
+# Configuration de Vhost dans une configuration type apache sur Xamp.
 
 
 Ouvrez le fichier de configuration d'Apache httpd.conf situé dans le dossier C:\xampp\apache\conf
