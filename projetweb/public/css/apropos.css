@@ -1,0 +1,672 @@
+.nous-sommes-une,
+.qui-sommes-nous {
+    position: absolute;
+    top: 154px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    width: 755px;
+    height: 200px;
+}
+
+.nous-sommes-une {
+    top: 517px;
+    left: 1px;
+    font-size: var(--font-size-11xl);
+    font-family: var(--font-dm-sans);
+    color: var(--color-gray-100);
+    width: 795px;
+    height: 87px;
+}
+
+.image-4-icon {
+    position: absolute;
+    top: 11px;
+    left: 829px;
+    width: 564px;
+    height: 846px;
+    object-fit: cover;
+}
+
+.hero-left,
+.hero-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1393px;
+    height: 846px;
+}
+
+.hero-section {
+    top: -11px;
+    left: 107px;
+    font-size: var(--font-size-33xl);
+    font-family: var(--font-rufina);
+}
+
+.header,
+.hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-darkslategray);
+    width: 1500px;
+    height: 93px;
+}
+
+.hover {
+    top: 46px;
+    border-radius: var(--br-31xl);
+    background-color: var(--color-springgreen);
+    width: 92px;
+    height: 5px;
+}
+
+.acc {
+    height: 31px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 30px;
+}
+
+
+.a-propos1,
+.avis {
+    position: absolute;
+    top: 8px;
+}
+
+.a-propos1 {
+    left: 127px;
+    display: flex;
+    color: var(--color-springgreen);
+    align-items: center;
+    justify-content: center;
+    width: 105px;
+}
+
+.avis {
+    left: 273px;
+}
+
+.accueil,
+.menu-child {
+    position: absolute;
+    top: 8px;
+    left: 0;
+}
+
+
+.menu-child {
+    top: 0;
+    left: 781px;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-springgreen);
+    width: 201px;
+    height: 50px;
+}
+
+.mon-compte {
+    padding: 5px 15px;
+    background-color: var(--color-springgreen);
+    border: 1px solid var(--color-springgreen);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+    height: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 135px;
+    position: absolute;
+    top: 30px;
+    right: 200px;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 135px;
+}
+
+.mon-compte:hover {
+    color: inherit;
+    background-color: var(--color-gray-300);
+}
+
+.valign-text-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu {
+    position: absolute;
+    top: 25px;
+    left: 0px;
+    width: 960px;
+    height: 51px;
+}
+
+.shimuldev {
+    position: absolute;
+    width: 182.29px;
+    height: 47.45px;
+}
+
+.shimuldev {
+    top: 0;
+    left: calc(50% - 91.14px);
+    display: flex;
+    align-items: center;
+}
+
+.education-child,
+.navbar {
+    align-items: flex-end;
+    background-color: var(--tuatara);
+    display: flex;
+    gap: 908px;
+    height: 93px;
+    justify-content: flex-end;
+    left: 0;
+    min-width: 1500px;
+    padding: 18px 66px;
+    position: absolute;
+    top: 0;
+}
+
+.navbar ul {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px;
+}
+
+.navbar ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color .3s;
+}
+
+.navbar ul li a:hover {
+    color: #00E472;
+}
+
+.education-child {
+    background-color: var(--color-darkslategray);
+    height: 1070px;
+}
+
+.right-icon {
+    position: absolute;
+    top: 174px;
+    left: 880px;
+    width: 513px;
+    height: 702px;
+    object-fit: cover;
+}
+
+.plus-sur-nous {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 246px);
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    display: inline-block;
+    width: 207px;
+    height: 24px;
+}
+
+.notre-mission {
+    position: absolute;
+    top: 46px;
+    left: calc(50% - 249px);
+    font-size: var(--font-size-26xl);
+    font-family: var(--font-rufina);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    width: 399px;
+    height: 90px;
+}
+
+.side-line-icon {
+    position: absolute;
+    top: 178px;
+    left: 0;
+    width: 36px;
+    height: 699px;
+}
+
+.faciliter-la-recherche {
+    position: absolute;
+    top: 166px;
+    left: calc(50% - 231px);
+    font-size: var(--font-size-5xl);
+    display: flex;
+    align-items: center;
+    width: 534px;
+    height: 61px;
+}
+
+.notre-plateforme-vise {
+    top: 277px;
+    color: var(--color-darkgray);
+    width: 374px;
+    height: 108px;
+}
+
+.notre-plateforme-facilite,
+.notre-plateforme-vise,
+.simplifier-le-processus {
+    position: absolute;
+    left: calc(50% - 231px);
+    display: flex;
+    align-items: center;
+}
+
+.simplifier-le-processus {
+    top: 459px;
+    font-size: var(--font-size-5xl);
+    width: 498px;
+    height: 61px;
+}
+
+.notre-plateforme-facilite {
+    top: 639px;
+    color: var(--color-darkgray);
+    width: 374px;
+    height: 108px;
+}
+
+.left {
+    position: absolute;
+    top: 108px;
+    left: calc(50% - 640px);
+    width: 606px;
+    height: 877px;
+}
+
+.education {
+    position: absolute;
+    top: 835px;
+    left: -1px;
+    width: 1500px;
+    height: 1070px;
+    color: var(--color-springgreen);
+}
+
+.envie-den-savoir {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.envie-den-savoir,
+.left1,
+.skills {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 351.5px);
+    width: 703px;
+    height: 230px;
+}
+
+.skills {
+    top: 1982px;
+    left: calc(50% - 387px);
+    text-align: center;
+    font-size: var(--font-size-43xl);
+    font-family: var(--font-rufina);
+}
+
+.image-1 {
+    height: 112;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 236px;
+}
+
+#my-image {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    height: 112px;
+    object-fit: cover;
+    width: 236px;
+}
+
+.image-1-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 237px;
+    height: 112px;
+    object-fit: cover;
+}
+
+.contact-btn-child {
+    padding: 5px 15px;
+    background-color: var(--color-springgreen);
+    border: 1px solid var(--color-springgreen);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    border-radius: var(--br-19xl);
+    width: 411px;
+    height: 128px;
+    font-size: var(--font-size-26xl);
+}
+
+.contact-btn-child a {
+    color: var(--color-white);
+}
+
+.contact-btn-child:hover {
+    color: inherit;
+    background-color: var(--color-gray-300);
+}
+
+.contactez-nous {
+    position: absolute;
+    top: 32px;
+    left: 74.73px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 279.74px;
+    height: 64px;
+}
+
+.contact-btn {
+    position: absolute;
+    top: 2194px;
+    left: 476px;
+    width: 411px;
+    height: 128px;
+    text-align: center;
+}
+
+.a-propos-child {
+    position: absolute;
+    top: 2450px;
+    left: 0;
+    background-color: var(--color-darkslategray);
+    width: 1500px;
+    height: 369px;
+}
+
+.contactez-nous1,
+.dcouvrir-les-entreprises {
+    position: absolute;
+    top: 2665px;
+    left: 914px;
+    text-decoration: underline;
+}
+
+.dcouvrir-les-entreprises {
+    top: 2622px;
+    left: 133px;
+}
+
+.image-2-icon {
+    position: absolute;
+    top: 2707px;
+    left: 1263px;
+    width: 237px;
+    height: 112px;
+    object-fit: cover;
+}
+
+.cesi,
+.entreprise,
+.etudiant {
+    position: absolute;
+    top: 2520px;
+    left: 110px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    display: inline-block;
+    color: var(--color-springgreen);
+    width: 173px;
+    height: 24px;
+}
+
+.cesi,
+.entreprise {
+    top: 2516px;
+    left: 476px;
+}
+
+.cesi {
+    left: 882px;
+}
+
+.avis-sur-les,
+.qui-sommes-nous1 {
+    position: absolute;
+    top: 2579px;
+    left: 909px;
+    text-decoration: underline;
+}
+
+.avis-sur-les {
+    top: 2622px;
+    left: 914px;
+}
+
+.chercher-un-offre,
+.crer-votre-offre,
+.trouver-des-stagiaires {
+    position: absolute;
+    top: 2579px;
+    left: 521px;
+    text-decoration: underline;
+}
+
+.chercher-un-offre,
+.crer-votre-offre {
+    top: 2622px;
+}
+
+.chercher-un-offre {
+    top: 2579px;
+    left: 133px;
+}
+
+.a-propos {
+    position: relative;
+    background-color: var(--color-gray-200);
+    width: 100%;
+    height: 2819px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-xl);
+    color: var(--color-white);
+    font-family: var(--font-dm-sans);
+}
+
+/** Partie Footer /**/
+
+.footer-dark {
+    padding: 70px 0;
+    color: var(--color-white);
+    background-color: var(--color-darkslategray);
+}
+
+.footer-dark h3 {
+    margin-top: 0;
+    color: var(--color-springgreen);
+    margin-bottom: 12px;
+    font-style: normal;
+    font-family: var(--font-family-dm_sans);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.footer-dark ul {
+    padding: 20px;
+    list-style: none;
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-dark ul a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.6;
+    font-family: var(--font-family-dm_sans);
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--font-size-s);
+    line-height: 26px;
+}
+
+.footer-dark ul a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+#my-image {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    height: 112px;
+    object-fit: cover;
+    width: 236px;
+}
+
+@media (max-width:767px) {
+    .footer-dark .item:not(.social) {
+        text-align: center;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+.footer-dark .item.text {
+    margin-bottom: 36px;
+}
+
+@media (max-width:767px) {
+    .footer-dark .item.text {
+        margin-bottom: 0;
+    }
+
+    img#my-image {
+        position: static;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.footer-dark .item.text p {
+    opacity: 0.6;
+    margin-bottom: 0;
+}
+
+.footer-dark .item.social {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@media (max-width:991px) {
+    .footer-dark .item.social {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+.footer-dark .item.social>a {
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
+    margin: 0 8px;
+    color: #fff;
+    opacity: 0.75;
+    margin-bottom: 20px;
+}
+
+.footer-dark .item.social>a:hover {
+    opacity: 0.9;
+}
+
+.footer-dark .copyright {
+    text-align: center;
+    padding-top: 24px;
+    opacity: 0.3;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+.col-entreprise {
+    position: relative;
+    left: 300px;
+    object-fit: cover;
+    width: 236px;
+}
+
+.col-cesi {
+    position: relative;
+    left: 500px;
+    object-fit: cover;
+    width: 236px;
+}
+
+.image-1-icon {
+    align-self: flex-end;
+    height: 112px;
+    margin-left: 136px;
+    object-fit: cover;
+    width: 237px;
+}
+
+.container-footer {
+    display: flex;
+}
+
+.container-footer div {
+    align-items: center;
+    margin: 0px;
+}
+
+.image-foote {
+    align-self: flex-end;
+    height: 112px;
+    margin-left: 136px;
+    object-fit: cover;
+    width: 237px;
+}
