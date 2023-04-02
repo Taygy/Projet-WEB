@@ -6,7 +6,7 @@ Il va falloir que vous installiez smarty sur votre ordinateur. Téléchargez-le 
 Ou vous pouvez le changer directement dans le code dans la partie Projetweb/src/view et ce sont tous les fichiers.php
 
 # Base de données
-Pour une meilleure expérience directe, la base de données que nous avons utilisées pour les tests est disponible dans deux versions (une remplie et l'autre vide)
+Pour une meilleure expérience directe, la base de données que nous avons utilisées pour les tests est disponible sous le nom de 'livrable3'. Attention cependant, vous devrez sûrement changer le nom d'utilisateur et le mot de passe pour accéder à la base de données dans le modèle disponible ici : 
 
 # Vhost
 Configuration de Vhost dans une configuration type apache sur Xamp.
