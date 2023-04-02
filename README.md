@@ -3,7 +3,8 @@ Projet Web Thomas Malek Valentin
 
 # Smarty
 Il va falloir que vous installiez smarty sur votre ordinateur. Téléchargez-le directement dans le fichier htdocs ou www, dans le dossier dans lequel vous allez mettre tout le code. Le fichier contenant les classes Smarty doit respecter l'arborescence : libs/smarty/smarty-master/libs/Smarty-class.php
-Ou vous pouvez le changer directement dans le code dans la partie Projetweb/src/view et ce sont tous les fichiers.php
+Ou vous pouvez le changer directement dans le code dans la partie https://github.com/Taygy/Projet-WEB/tree/main/projetweb/src/view
+Il faut alors changer tous les fichiers php.
 
 # Base de données
 Pour une meilleure expérience directe, la base de données que nous avons utilisées pour les tests est disponible sous le nom de 'livrable3'. Attention cependant, vous devrez sûrement changer le nom d'utilisateur et le mot de passe pour accéder à la base de données dans le modèle disponible ici : https://github.com/Taygy/Projet-WEB/blob/main/projetweb/src/modele/model.php
