@@ -1,7 +1,7 @@
 # Projet-WEB à lire avant de télécharger le projet !
 Projet Web Thomas Malek Valentin
 
---
+---
 
 # Smarty
 Il va falloir que vous installiez smarty sur votre ordinateur. Téléchargez-le directement dans le fichier htdocs ou www, dans le dossier dans lequel vous allez mettre tout le code. Le fichier contenant les classes Smarty doit respecter l'arborescence : libs/smarty/smarty-master/libs/Smarty-class.php
@@ -29,7 +29,7 @@ Ouvrez le fichier de configuration des vhosts httpd-vhosts.conf situé dans le d
 
 Ajoutez le bloc de configuration ci dessous :
 
-`<VirtualHost *:80>
+<VirtualHost *:80>
     DocumentRoot "C:/xampp/htdocs/Projet-WEB/projetweb"
     ServerName cesi.stage
     <Directory "C:/xampp/htdocs/Projet-WEB/projetweb">
@@ -37,7 +37,7 @@ Ajoutez le bloc de configuration ci dessous :
         AllowOverride All
         Require all granted
     </Directory>
-</VirtualHost>`
+</VirtualHost>
 
 Dans ce bloc de configuration, nous avons simplement modifié la directive ServerName pour qu'elle contienne maintenant "cesi.stage".
 
