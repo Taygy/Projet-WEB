@@ -1,4 +1,4 @@
-# Projet-WEB
+# Projet-WEB à lire avant de télécharger le projet !
 Projet Web Thomas Malek Valentin
 
 # Smarty
@@ -7,7 +7,11 @@ Ou vous pouvez le changer directement dans le code dans la partie https://github
 Il faut alors changer tous les fichiers php.
 
 # Base de données
-Pour une meilleure expérience directe, la base de données que nous avons utilisées pour les tests est disponible sous le nom de 'livrable3'. Attention cependant, vous devrez sûrement changer le nom d'utilisateur et le mot de passe pour accéder à la base de données dans le modèle disponible ici : https://github.com/Taygy/Projet-WEB/blob/main/projetweb/src/modele/model.php
+Pour une meilleure expérience directe, la base de données que nous avons utilisées pour les tests est disponible sous le nom de 'livrable3'. Pour utiliser le site nous utilisons des sessions, c'est donc normal de ne pas avoir accès à toutes les fonctionnalités du site. Nous vous recommendons de prendre un des profils suivant pour mieux comprendre son fonctionnement:
+Thomas, administrateur, mot de passe : thomas06
+Sylvain, pilote mot de passe : lesylv06
+Malek, étudiant, mot de passe : malek06
+Attention cependant, vous devrez sûrement changer le nom d'utilisateur et le mot de passe pour accéder à la base de données dans le modèle disponible ici : https://github.com/Taygy/Projet-WEB/blob/main/projetweb/src/modele/model.php
 
 # Vhost
 Configuration de Vhost dans une configuration type apache sur Xamp.
